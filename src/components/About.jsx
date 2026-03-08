@@ -1,7 +1,8 @@
 import { personalInfo, education } from '../data/portfolioData'
 import { SiGithub } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
-import { HiMail, HiLocationMarker } from 'react-icons/hi'
+import { HiMail, HiLocationMarker, HiDownload } from 'react-icons/hi'
+
 
 export default function About() {
   return (
@@ -22,12 +23,12 @@ export default function About() {
               I'm a third-year B.Tech CSE (AIML) student at VIT-AP University, Amaravati,
               currently serving as <span className="text-cyan-400 font-semibold">Vice President
               of the Machine Learning Club</span>. I'm passionate about building intelligent
-              systems that solve real-world problems.
+              systems that solve real-world problems.I'm actively seeking AI & ML Engineering and Full Stack roles.
             </p>
             <p className="text-slate-400 text-base leading-relaxed mb-4">
               My work spans <span className="text-white">medical imaging AI</span>, financial
               fraud detection, <span className="text-white">GenAI applications</span>, IoT-integrated
-              deep learning, and secure cloud-native backend systems — always with a focus on
+              deep learning, and secure cloud-native backend systems always with a focus on
               production-grade quality and measurable results.
             </p>
             <div className="flex items-center gap-2 text-slate-400 text-sm mb-6">
@@ -47,6 +48,11 @@ export default function About() {
               <a href={`mailto:${personalInfo.email}`}
                 className="flex items-center gap-2 text-slate-300 hover:text-cyan-400 transition-colors font-medium text-sm">
                 <HiMail className="text-lg" /> Email
+              </a>
+              <a href="https://drive.google.com/file/d/1XuHlkl4grx4d4or_ICiLg2xg_8w3g9SF/view?usp=sharing"
+                target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-2 text-slate-300 hover:text-cyan-400 transition-colors font-medium text-sm">
+                <HiDownload className="text-lg" /> Resume
               </a>
             </div>
           </div>
