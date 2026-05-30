@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { projects } from '../data/portfolioData'
+import { FaGithub, FaGlobe } from 'react-icons/fa'
+import { FaTrophy } from 'react-icons/fa'
 
 export default function Projects() {
   const [active, setActive] = useState('All')
@@ -27,6 +29,8 @@ export default function Projects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filtered.map((p, i) => (
             <div key={i} className="bg-slate-800 border border-slate-700 rounded-2xl p-6 flex flex-col hover:border-cyan-400/40 hover:-translate-y-1 transition-all duration-200">
+
+              {/* Title row with GitHub + Globe icons top-right */}
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <p className="text-cyan-400 text-xs font-semibold tracking-wider mb-1">
@@ -34,18 +38,33 @@ export default function Projects() {
                   </p>
                   <h3 className="text-white font-bold text-lg leading-tight">{p.title}</h3>
                 </div>
-                {p.github && (
-                  <a href={p.github} target="_blank" rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-cyan-400 transition-colors text-xl ml-2 flex-shrink-0">
-                    ↗
-                  </a>
-                )}
+
+                {/* Icon cluster top-right */}
+                <div className="flex items-center gap-2 ml-2 flex-shrink-0">
+                  {p.github && (
+                    <a href={p.github} target="_blank" rel="noopener noreferrer"
+                      className="text-slate-400 hover:text-cyan-400 transition-colors"
+                      title="View Source">
+                      <FaGithub className="text-xl" />
+                    </a>
+                  )}
+                  {p.live && (
+                    <a href={p.live} target="_blank" rel="noopener noreferrer"
+                      className="text-slate-400 hover:text-cyan-400 transition-colors"
+                      title="Live Demo">
+                      <FaGlobe className="text-xl" />
+                    </a>
+                  )}
+                </div>
               </div>
 
               {p.highlight && (
                 <div className="bg-cyan-400/10 border border-cyan-400/20 rounded-lg px-3 py-1.5 mb-3">
-                  <p className="text-cyan-400 text-xs font-semibold">🏆 {p.highlight}</p>
-                </div>
+                  <p className="flex items-center gap-2 text-cyan-400 text-xs font-semibold">
+                    <FaTrophy className="text-[11px] flex-shrink-0" />
+                    <span>{p.highlight}</span>
+                    </p>
+                    </div>
               )}
 
               <p className="text-slate-400 text-sm leading-relaxed flex-grow">{p.description}</p>

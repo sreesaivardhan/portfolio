@@ -63,25 +63,16 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Gemini Pro Financial Decoder",
-    subtitle: "GenAI Application",
-    description:
-      "Full-stack AI analytics platform using Gemini Pro API and Streamlit for financial document insights with a multimodal RAG pipeline.",
-    tags: ["GenAI", "Gemini API", "Streamlit", "RAG", "Python"],
-    github: "https://github.com/sreesaivardhan/gemini-financial-decoder",
-    category: "AI",
-    highlight: "90.8/100 — SmartBridge Google Cloud GenAI Program",
-  },
-  {
-    title: "Hybrid ML Fraud Detection",
-    subtitle: "Machine Learning",
-    description:
-      "Ensemble Voting Classifier (XGBoost, Random Forest, Logistic Regression) with SMOTE balancing on imbalanced transaction datasets.",
-    tags: ["Python", "XGBoost", "Scikit-learn", "SMOTE", "Feature Engineering"],
-    github: "https://github.com/sreesaivardhan/ML-FRAUD-DETECTION-PROJECT",
-    category: "AI",
-    highlight: "99.6% classification accuracy",
-  },
+  title: "SkillSync",
+  subtitle: "Skill Exchange & Collaboration Platform",
+  description:
+    "Built a full-stack MERN platform for peer-to-peer skill exchange with profile management, GitHub skill import, JWT auth, Google OAuth, and secure password recovery flows.",
+  tags: ["MERN", "React.js", "Node.js", "MongoDB", "JWT", "OAuth"],
+  github: "https://github.com/your-username/skillsync",
+  live: "https://your-live-link.com",
+  category: "Web",
+  highlight: null,
+},
   {
     title: "Retinal Disease Detection",
     subtitle: "Medical AI",
@@ -93,14 +84,14 @@ export const projects = [
     highlight: "72.9% clinical classification accuracy",
   },
   {
-    title: "Skillverse",
-    subtitle: "Skill Exchange Platform",
+    title: "GreenVoice",
+    subtitle: "Plant Health AI",
     description:
-      "Full-stack MERN platform for peer-to-peer skill exchange with time-credit tracking, JWT auth, and WebRTC live mentorship sessions.",
-    tags: ["MERN", "WebRTC", "JWT", "MongoDB", "React.js"],
-    github: "https://github.com/sreesaivardhan/SKILLVERSE",
-    category: "Web",
-    highlight: "HackVerse 2025 — Top 50 Finalist (200+ teams)",
+      "ML-based early plant disease detection using bioelectric signals and environmental sensor data from ESP32 integration.",
+    tags: ["Python", "ESP32", "IoT", "ML", "Signal Processing"],
+    github: "https://github.com/R-J-N-1810/Green-Voice",
+    category: "AI",
+    highlight: "Top 10 — VIT-AP Engineering Clinics Expo",
   },
   {
     title: "Hospital Operation Scheduler",
@@ -113,6 +104,26 @@ export const projects = [
     highlight: null,
   },
   {
+  title: "RxOCR",
+  subtitle: "Multi-Domain Prescription OCR Prototype",
+  description:
+    "Built a prescription digitization prototype using multi-pass OCR, confidence-aware field extraction, and domain-adaptive post-processing for dental and general hospital prescriptions.",
+  tags: ["Python", "Streamlit", "EasyOCR", "OCR", "Healthcare AI"],
+  github: "https://github.com/sreesaivardhan/prescription-ocr-prototype",
+  category: "AI",
+  highlight: null,
+},
+  {
+  title: "SWARM",
+  subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
+  description:
+    "Developed a hierarchical multi-agent reinforcement learning system for autonomous warehousing, combining GCN-based task allocation, PPO-based navigation, and safety constraints through control barrier functions.",
+  tags: ["Python", "RL", "PPO", "GCN", "Multi-Agent Systems"],
+  github: "https://github.com/sreesaivardhan/SWARM-HMARL",
+  category: "AI",
+  highlight: null,
+},
+  {
     title: "SecureGov",
     subtitle: "Document Management",
     description:
@@ -123,25 +134,25 @@ export const projects = [
     highlight: null,
   },
   {
-    title: "GreenVoice",
-    subtitle: "Plant Health AI",
+    title: "Hybrid ML Fraud Detection",
+    subtitle: "Machine Learning",
     description:
-      "ML-based early plant disease detection using bioelectric signals and environmental sensor data from ESP32 integration.",
-    tags: ["Python", "ESP32", "IoT", "ML", "Signal Processing"],
-    github: "https://github.com/R-J-N-1810/Green-Voice",
-    category: "AI",
-    highlight: "Top 10 — VIT-AP Engineering Clinics Expo",
+      "Ensemble Voting Classifier (XGBoost, Random Forest, Logistic Regression) with SMOTE balancing on imbalanced transaction datasets.",
+    tags: ["Python", "XGBoost", "Scikit-learn", "SMOTE", "Feature Engineering"],
+    github: "https://github.com/sreesaivardhan/ML-FRAUD-DETECTION-PROJECT",
+    category: "AI",  
+    highlight: null, 
   },
-    {
-    title: "ChatChime",
-    subtitle: "Real-Time Chat App",
-    description:
-      "Real-time messaging platform supporting multiple chat rooms with WebSocket communication, persistent sessions, and offline message handling.",
-    tags: ["Node.js", "Firebase", "WebSockets", "JavaScript", "Real-time"],
-    github: "https://github.com/sreesaivardhan/ChatChime",
-    category: "Web",
-    highlight: null,
-  },
+  {
+  title: "Semantic Search Engine",
+  subtitle: "Cluster-Aware Semantic Search System",
+  description:
+    "Built a semantic search engine with cluster-aware caching, FAISS retrieval, GMM clustering, and cluster keyword analysis for efficient paraphrase-aware search over 20 Newsgroups data.",
+  tags: ["Python", "FAISS", "FastAPI", "GMM", "NLP"],
+  github: "https://github.com/sreesaivardhan/semantic-search-system",
+  category: "AI",
+  highlight: null,
+},
   {
     title: "Virtual Art Gallery",
     subtitle: "Interactive Web Experience",
@@ -149,6 +160,25 @@ export const projects = [
       "Immersive 3D-style virtual gallery for exploring curated digital artworks with responsive design, smooth navigation, and dynamic content rendering.",
     tags: ["React.js", "JavaScript", "HTML/CSS", "UI Design", "Responsive"],
     github: "https://github.com/sreesaivardhan/virtual-gallery",
+    category: "Web",
+    highlight: null,
+  },
+  {
+    title: "Gemini Pro Financial Decoder",
+    subtitle: "GenAI Application",
+    description:
+      "Full-stack AI analytics platform using Gemini Pro API and Streamlit for financial document insights with a multimodal RAG pipeline.",
+    tags: ["GenAI", "Gemini API", "Streamlit", "RAG", "Python"],
+    github: "https://github.com/sreesaivardhan/gemini-financial-decoder",
+    category: "AI",
+    highlight: null,},
+    {
+    title: "ChatChime",
+    subtitle: "Real-Time Chat App",
+    description:
+      "Real-time messaging platform supporting multiple chat rooms with WebSocket communication, persistent sessions, and offline message handling.",
+    tags: ["Node.js", "Firebase", "WebSockets", "JavaScript", "Real-time"],
+    github: "https://github.com/sreesaivardhan/ChatChime",
     category: "Web",
     highlight: null,
   },
@@ -195,31 +225,10 @@ export const certifications = [
 
 export const achievements = [
   {
-    title: "Vice President – Machine Learning Club",
-    org: "VIT-AP University (MLC)",
-    duration: "Dec 2023 – Present",
-    icon: "🏛️",
-    points: [
-      "Spearheading operations managing 10+ members across technical and non-technical departments.",
-      "Orchestrated 10+ annual ML workshops, competitions, and technical sessions.",
-      "Drove a 45% club membership increase through hands-on project initiatives.",
-    ],
-  },
-  {
-    title: "HackVerse 2025 – National Hackathon",
-    org: "Top 50 Finalist — 200+ competing teams",
-    duration: "April 2025",
-    icon: "🥇",
-    points: [
-      "Built Skillverse AI-powered skill exchange platform using MERN stack in 24 hours.",
-      "Ranked top 25% with full-stack implementation and real-time WebRTC features.",
-    ],
-  },
-  {
     title: "Registered Design Contributor",
     org: "Smart Power Bank — Indian Designs Act",
     duration: "2025",
-    icon: "📜",
+    icon: "certificate",
     points: [
       "Co-contributor to a multi-function smart power bank registered under the Indian Designs Act.",
       "Design Registration Number: 455127-001.",
@@ -229,9 +238,30 @@ export const achievements = [
     title: "Top 10 Project – Engineering Clinics Expo",
     org: "VIT-AP University",
     duration: "2025",
-    icon: "🏆",
+    icon: "trophy",
     points: [
       "GreenVoice selected among Top 10 projects at the VIT-AP Engineering Clinics Expo.",
     ],
   },
-];
+  {
+    title: "Vice President – Machine Learning Club",
+    org: "VIT-AP University (MLC)",
+    duration: "Dec 2023 – May 2026",
+    icon: "leadership",
+    points: [
+      "Won the Best Technical Club Award for 2025-2026 at VIT-AP University.",
+      "Spearheading operations managing 10+ groups across technical and non-technical departments.",
+      "Orchestrated 10+ annual ML workshops, competitions, and technical sessions.",
+    ],
+  },
+  {
+    title: "HackVerse 2025 – National Hackathon",
+    org: "Top 50 Finalist — 200+ competing teams",
+    duration: "April 2025",
+    icon: "medal",
+    points: [
+      "Built AI-powered skill exchange platform using MERN stack.",
+      "Ranked top 25% with full-stack implementation and real-time WebRTC features.",
+    ],
+  },
+]

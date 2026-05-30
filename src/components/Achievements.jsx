@@ -1,4 +1,12 @@
 import { achievements } from '../data/portfolioData'
+import { FaUserTie, FaMedal, FaFileAlt, FaTrophy } from 'react-icons/fa'
+
+const iconMap = {
+  leadership:  FaUserTie,
+  medal:       FaMedal,
+  certificate: FaFileAlt,
+  trophy:      FaTrophy,
+}
 
 export default function Achievements() {
   return (
@@ -6,27 +14,37 @@ export default function Achievements() {
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-white mb-2">Achievements & Leadership</h2>
         <div className="w-16 h-1 bg-cyan-400 mb-12"></div>
+
         <div className="grid md:grid-cols-2 gap-5">
-          {achievements.map((a, i) => (
-            <div key={i} className="bg-slate-800 border border-slate-700 rounded-2xl p-6 hover:border-cyan-400/40 transition-colors">
-              <div className="flex items-start gap-4 mb-4">
-                <span className="text-3xl">{a.icon}</span>
-                <div>
-                  <h3 className="text-white font-bold leading-snug">{a.title}</h3>
-                  <p className="text-cyan-400 text-sm mt-0.5">{a.org}</p>
-                  <p className="text-slate-500 text-xs mt-0.5">{a.duration}</p>
+          {achievements.map((a, i) => {
+            const Icon = iconMap[a.icon] || FaTrophy
+            return (
+              <div key={i} className="bg-slate-800 border border-slate-700 rounded-2xl p-6 hover:border-cyan-400/40 transition-colors">
+                <div className="flex items-start gap-4 mb-4">
+
+                  {/* ICON BOX — renders the actual icon component */}
+                  <div className="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center flex-shrink-0">
+                    <Icon className="text-cyan-400 text-xl" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-white font-bold leading-snug">{a.title}</h3>
+                    <p className="text-cyan-400 text-sm mt-0.5">{a.org}</p>
+                    <p className="text-slate-500 text-xs mt-0.5">{a.duration}</p>
+                  </div>
                 </div>
+
+                <ul className="space-y-2">
+                  {a.points.map((pt, j) => (
+                    <li key={j} className="flex gap-3 text-slate-300 text-sm">
+                      <span className="text-cyan-400 flex-shrink-0 mt-0.5">▸</span>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-2">
-                {a.points.map((pt, j) => (
-                  <li key={j} className="flex gap-3 text-slate-300 text-sm">
-                    <span className="text-cyan-400 flex-shrink-0 mt-0.5">▸</span>
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
