@@ -20,11 +20,11 @@ export const education = {
   coursework: [
     "Artificial Intelligence",
     "Machine Learning",
-    "Deep Learning",
     "Data Structures & Algorithms",
     "Operating Systems",
     "Computer Networks",
     "Database Systems",
+    "Deep Learning",
     "OOps & Cloud Computing",
     "web Development",
   ],
@@ -68,8 +68,8 @@ export const projects = [
   description:
     "Built a full-stack MERN platform for peer-to-peer skill exchange with profile management, GitHub skill import, JWT auth, Google OAuth, and secure password recovery flows.",
   tags: ["MERN", "React.js", "Node.js", "MongoDB", "JWT", "OAuth"],
-  github: "https://github.com/your-username/skillsync",
-  live: "https://your-live-link.com",
+  github: "https://github.com/sreesaivardhan/skillsync",
+  live: "https://skillsync-nine-mauve.vercel.app",
   category: "Web",
   highlight: null,
 },
