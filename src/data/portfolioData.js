@@ -94,12 +94,13 @@ export const projects = [
     highlight: "Top 10 — VIT-AP Engineering Clinics Expo",
   },
   {
-    title: "Hospital Operation Scheduler",
-    subtitle: "Healthcare Web App",
+    title: "SecureGov",
+    subtitle: "Document Management",
     description:
-      "Dynamic OT scheduling system with real-time dashboards, Firebase Firestore backend, and role-based admin portals for doctor and surgery management.",
-    tags: ["Firebase", "Node.js", "JavaScript", "RBAC", "Real-time"],
-    github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
+      "Government-style secure document management system with JWT auth, role-based access control, encrypted storage, and audit logging.",
+    tags: ["Node.js", "Express.js", "MongoDB", "JWT", "Security"],
+    github: "https://github.com/sreesaivardhan/SecureGov",
+     live: "https://securegov.netlify.app/",
     category: "Web",
     highlight: null,
   },
@@ -123,16 +124,7 @@ export const projects = [
   category: "AI",
   highlight: null,
 },
-  {
-    title: "SecureGov",
-    subtitle: "Document Management",
-    description:
-      "Government-style secure document management system with JWT auth, role-based access control, encrypted storage, and audit logging.",
-    tags: ["Node.js", "Express.js", "MongoDB", "JWT", "Security"],
-    github: "https://github.com/sreesaivardhan/SecureGov",
-    category: "Web",
-    highlight: null,
-  },
+  
   {
     title: "Hybrid ML Fraud Detection",
     subtitle: "Machine Learning",
@@ -142,6 +134,16 @@ export const projects = [
     github: "https://github.com/sreesaivardhan/ML-FRAUD-DETECTION-PROJECT",
     category: "AI",  
     highlight: null, 
+  },
+  {
+    title: "Hospital Operation Scheduler",
+    subtitle: "Healthcare Web App",
+    description:
+      "Dynamic OT scheduling system with real-time dashboards, Firebase Firestore backend, and role-based admin portals for doctor and surgery management.",
+    tags: ["Firebase", "Node.js", "JavaScript", "RBAC", "Real-time"],
+    github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
+    category: "Web",
+    highlight: null,
   },
   {
   title: "Semantic Search Engine",
@@ -160,6 +162,7 @@ export const projects = [
       "Immersive 3D-style virtual gallery for exploring curated digital artworks with responsive design, smooth navigation, and dynamic content rendering.",
     tags: ["React.js", "JavaScript", "HTML/CSS", "UI Design", "Responsive"],
     github: "https://github.com/sreesaivardhan/virtual-gallery",
+     live: "https://lenslores.netlify.app/",
     category: "Web",
     highlight: null,
   },
