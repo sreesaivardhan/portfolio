@@ -47,7 +47,7 @@ export default function About() {
                 className="flex items-center gap-2 text-slate-300 hover:text-cyan-400 transition-colors font-medium text-sm">
                 <HiMail className="text-lg" /> Email
               </a>
-              <a href="https://drive.google.com/file/d/1E2NCWWbZAu7ogUVyrOpce9p-6CNW0GTN/view?usp=sharing"
+              <a href="https://drive.google.com/file/d/1so_0rcCFtFey309IYv3wb8tpFwk0RZOe/view?usp=sharing"
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 text-slate-300 hover:text-cyan-400 transition-colors font-medium text-sm">
                 <HiDownload className="text-lg" /> Resume
