@@ -84,6 +84,27 @@ export const projects = [
     highlight: "72.9% clinical classification accuracy",
   },
   {
+  title: "SWARM",
+  subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
+  description:
+    "Developed a hierarchical multi-agent reinforcement learning system for autonomous warehousing, combining GCN-based task allocation, PPO-based navigation, and safety constraints through control barrier functions.",
+  tags: ["Python", "RL", "PPO", "GCN", "Multi-Agent Systems"],
+  github: "https://github.com/sreesaivardhan/SWARM-HMARL",
+  category: "AI",
+  highlight: null,
+},
+{
+    title: "Medicore",
+    subtitle: "Healthcare Web App",
+    description:
+      "Dynamic OT scheduling system with real-time dashboards, Firebase Firestore backend, and role-based admin portals for doctor and surgery management.",
+    tags: ["Firebase", "Node.js", "JavaScript", "RBAC", "Real-time"],
+    github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
+    live: "https://mediicore.netlify.app/",
+    category: "Web",
+    highlight: null,
+  },
+  {
     title: "GreenVoice",
     subtitle: "Plant Health AI",
     description:
@@ -92,17 +113,6 @@ export const projects = [
     github: "https://github.com/R-J-N-1810/Green-Voice",
     category: "AI",
     highlight: "Top 10 — VIT-AP Engineering Clinics Expo",
-  },
-  {
-    title: "SecureGov",
-    subtitle: "Document Management",
-    description:
-      "Government-style secure document management system with JWT auth, role-based access control, encrypted storage, and audit logging.",
-    tags: ["Node.js", "Express.js", "MongoDB", "JWT", "Security"],
-    github: "https://github.com/sreesaivardhan/SecureGov",
-     live: "https://securegov.netlify.app/",
-    category: "Web",
-    highlight: null,
   },
   {
   title: "RxOCR",
@@ -115,16 +125,16 @@ export const projects = [
   highlight: null,
 },
   {
-  title: "SWARM",
-  subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
-  description:
-    "Developed a hierarchical multi-agent reinforcement learning system for autonomous warehousing, combining GCN-based task allocation, PPO-based navigation, and safety constraints through control barrier functions.",
-  tags: ["Python", "RL", "PPO", "GCN", "Multi-Agent Systems"],
-  github: "https://github.com/sreesaivardhan/SWARM-HMARL",
-  category: "AI",
-  highlight: null,
-},
-  
+    title: "SecureGov",
+    subtitle: "Document Management",
+    description:
+      "Government-style secure document management system with JWT auth, role-based access control, encrypted storage, and audit logging.",
+    tags: ["Node.js", "Express.js", "MongoDB", "JWT", "Security"],
+    github: "https://github.com/sreesaivardhan/SecureGov",
+     live: "https://securegov.netlify.app/",
+    category: "Web",
+    highlight: null,
+  },
   {
     title: "Hybrid ML Fraud Detection",
     subtitle: "Machine Learning",
@@ -136,16 +146,6 @@ export const projects = [
     highlight: null, 
   },
   {
-    title: "Hospital Operation Scheduler",
-    subtitle: "Healthcare Web App",
-    description:
-      "Dynamic OT scheduling system with real-time dashboards, Firebase Firestore backend, and role-based admin portals for doctor and surgery management.",
-    tags: ["Firebase", "Node.js", "JavaScript", "RBAC", "Real-time"],
-    github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
-    category: "Web",
-    highlight: null,
-  },
-  {
   title: "Semantic Search Engine",
   subtitle: "Cluster-Aware Semantic Search System",
   description:
@@ -155,14 +155,14 @@ export const projects = [
   category: "AI",
   highlight: null,
 },
-  {
-    title: "Virtual Art Gallery",
-    subtitle: "Interactive Web Experience",
+{
+    title: "ChatChime",
+    subtitle: "Real-Time Chat App",
     description:
-      "Immersive 3D-style virtual gallery for exploring curated digital artworks with responsive design, smooth navigation, and dynamic content rendering.",
-    tags: ["React.js", "JavaScript", "HTML/CSS", "UI Design", "Responsive"],
-    github: "https://github.com/sreesaivardhan/virtual-gallery",
-     live: "https://virtual-gallery-gamma-woad.vercel.app",
+      "Real-time multi-room chat platform with WebSocket-based messaging, live typing indicators, server-side user presence, and duplicate username enforcement across concurrent sessions.",
+    tags: ["Node.js", "Express", "Socket.IO", "JavaScript", "Real-time", "WebSockets"],
+    github: "https://github.com/sreesaivardhan/ChatChime",
+      live: "https://chat-chimes.netlify.app/",
     category: "Web",
     highlight: null,
   },
@@ -175,17 +175,17 @@ export const projects = [
     github: "https://github.com/sreesaivardhan/gemini-financial-decoder",
     category: "AI",
     highlight: null,},
-    {
-    title: "ChatChime",
-    subtitle: "Real-Time Chat App",
+  {
+    title: "Virtual Art Gallery",
+    subtitle: "Interactive Web Experience",
     description:
-      "Real-time multi-room chat platform with WebSocket-based messaging, live typing indicators, server-side user presence, and duplicate username enforcement across concurrent sessions.",
-    tags: ["Node.js", "Express", "Socket.IO", "JavaScript", "Real-time", "WebSockets"],
-    github: "https://github.com/sreesaivardhan/ChatChime",
-      live: "https://chat-chimes.netlify.app/",
+      "Immersive 3D-style virtual gallery for exploring curated digital artworks with responsive design, smooth navigation, and dynamic content rendering.",
+    tags: ["React.js", "JavaScript", "HTML/CSS", "UI Design", "Responsive"],
+    github: "https://github.com/sreesaivardhan/virtual-gallery",
+     live: "https://virtual-gallery-gamma-woad.vercel.app",
     category: "Web",
     highlight: null,
-  },
+  }
 ];
 
 export const certifications = [
