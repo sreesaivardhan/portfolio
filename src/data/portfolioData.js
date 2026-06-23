@@ -105,7 +105,7 @@ export const projects = [
   highlight: null,
 },
 {
-  title: "Medicore",
+  title: "MediCore",
   subtitle: "Healthcare Management Platform",
   description:
     "Full-stack healthcare management platform supporting appointment booking, doctor assignment, operation theater scheduling, Razorpay payments, and role-based dashboards with Firebase-powered real-time updates.",
