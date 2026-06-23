@@ -15,7 +15,7 @@ export const personalInfo = {
 export const education = {
   degree: "B.Tech in Computer Science and Engineering (AIML)",
   university: "VIT-AP University",
-  cgpa: "9.08",
+  cgpa: "9.07",
   graduation: "June 2027",
   coursework: [
     "Artificial Intelligence",
@@ -176,18 +176,18 @@ export const projects = [
     category: "AI",  
     highlight: null, 
   },
-  
-  {
-    title: "LensLore",
-    subtitle: "Interactive Web Experience",
-    description:
-      "Interactive digital art gallery featuring responsive design, immersive navigation, and dynamic content rendering for an engaging artwork exploration experience.",
-    tags: ["React.js", "JavaScript", "UI/UX", "Responsive Design", "Frontend", "Interactive Web"],
-    github: "https://github.com/sreesaivardhan/virtual-gallery",
-     live: "https://virtual-gallery-gamma-woad.vercel.app",
-    category: "Web",
-    highlight: null,
-  }
+ {
+  title: "LensLore",
+  subtitle: "Photography Journal Platform",
+  description:
+    "Metadata-driven photography platform featuring dynamic JSON-powered content rendering, editorial gallery experiences, collection discovery, theme persistence, and location-integrated visual storytelling.",
+  tags: [
+    "JavaScript", "HTML5", "CSS3", "JSON", "Responsive Design", "UI/UX", "Editorial Design", "Frontend"],
+  github: "https://github.com/sreesaivardhan/virtual-gallery",
+  live: "https://virtual-gallery-gamma-woad.vercel.app",
+  category: "Web",
+  highlight: "Featured"
+}
 ];
 
 export const certifications = [
