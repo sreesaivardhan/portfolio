@@ -186,7 +186,7 @@ export const projects = [
   github: "https://github.com/sreesaivardhan/virtual-gallery",
   live: "https://virtual-gallery-gamma-woad.vercel.app",
   category: "Web",
-  highlight: "Featured"
+  highlight: null,
 }
 ];
 
