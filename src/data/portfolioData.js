@@ -67,12 +67,12 @@ export const projects = [
   subtitle: "AI-Powered Collaborative Kanban Platform",
   description:
     "Production-ready collaborative Kanban platform with real-time task synchronization, AI-powered project insights, GitHub issue import, Chrome extension, and secure PostgreSQL-backed authentication.",
-  tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "OAuth", "AI"]
+  tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "OAuth", "AI"],
   github: "https://github.com/sreesaivardhan/nextask",
-  live: "https://<your-vercel-domain>",
+  live: "https://nextask-flame.vercel.app",
   category: "Web",
   highlight: null,
-}
+},
   {
   title: "SkillSync",
   subtitle: "Skill Exchange & Collaboration Platform",
@@ -101,7 +101,7 @@ export const projects = [
       "Secure document management platform featuring encrypted file handling, role-based access control, Google OAuth, JWT authentication, audit tracking, and controlled document sharing workflows.",
     tags: ["Node.js", "Express.js", "MongoDB", "Firebase Storage", "JWT", "Google OAuth", "RBAC", "Security"],
     github: "https://github.com/sreesaivardhan/SecureGov",
-     live: "https://securegov.netlify.app/",
+     live: "https://securegov.netlify.app",
     category: "Web",
     highlight: null,
   },
@@ -122,7 +122,7 @@ export const projects = [
     "Full-stack healthcare management platform supporting appointment booking, doctor assignment, operation theater scheduling, Razorpay payments, and role-based dashboards with Firebase-powered real-time updates.",
   tags: ["Firebase", "Firestore", "Cloud Functions", "Razorpay", "RBAC", "Authentication", "Real-Time", "Healthcare"],
   github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
-  live: "https://mediicore.netlify.app/",
+  live: "https://mediicore.netlify.app",
   category: "Web",
   highlight: null,
 },
@@ -143,7 +143,7 @@ export const projects = [
       "Real-time multi-room communication platform built with Socket.IO featuring live messaging, typing indicators, presence tracking, and resilient WebSocket connectivity.",
     tags: ["Socket.IO", "WebSockets", "Node.js", "Express.js", "Real-Time", "Communication"],
     github: "https://github.com/sreesaivardhan/ChatChime",
-      live: "https://chat-chimes.netlify.app/",
+      live: "https://chat-chimes.netlify.app",
     category: "Web",
     highlight: null,
   },
