@@ -63,6 +63,17 @@ export const experience = [
 
 export const projects = [
   {
+  title: "NexTask",
+  subtitle: "AI-Powered Collaborative Kanban Platform",
+  description:
+    "Production-ready collaborative Kanban platform with real-time task synchronization, AI-powered project insights, GitHub issue import, Chrome extension, and secure PostgreSQL-backed authentication.",
+  tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "OAuth", "AI"]
+  github: "https://github.com/sreesaivardhan/nextask",
+  live: "https://<your-vercel-domain>",
+  category: "Web",
+  highlight: null,
+}
+  {
   title: "SkillSync",
   subtitle: "Skill Exchange & Collaboration Platform",
   description:
