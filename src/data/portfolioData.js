@@ -95,27 +95,6 @@ export const projects = [
     highlight: "72.9% clinical classification accuracy",
   },
   {
-    title: "SecureGov",
-    subtitle: "Document Management",
-    description:
-      "Secure document management platform featuring encrypted file handling, role-based access control, Google OAuth, JWT authentication, audit tracking, and controlled document sharing workflows.",
-    tags: ["Node.js", "Express.js", "MongoDB", "Firebase Storage", "JWT", "Google OAuth", "RBAC", "Security"],
-    github: "https://github.com/sreesaivardhan/SecureGov",
-     live: "https://securegov.netlify.app",
-    category: "Web",
-    highlight: null,
-  },
-  {
-  title: "SWARM",
-  subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
-  description:
-    "Hierarchical multi-agent reinforcement learning framework for autonomous warehouse coordination combining PPO navigation, GCN task allocation, and safety-aware control mechanisms.",
-  tags: ["Reinforcement Learning", "PPO", "GCN", "Multi-Agent Systems", "Control Barrier Functions", "Python"],
-  github: "https://github.com/sreesaivardhan/SWARM-HMARL",
-  category: "AI",
-  highlight: null,
-},
-{
   title: "MediCore",
   subtitle: "Healthcare Management Platform",
   description:
@@ -126,6 +105,27 @@ export const projects = [
   category: "Web",
   highlight: null,
 },
+{
+  title: "SWARM",
+  subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
+  description:
+    "Hierarchical multi-agent reinforcement learning framework for autonomous warehouse coordination combining PPO navigation, GCN task allocation, and safety-aware control mechanisms.",
+  tags: ["Reinforcement Learning", "PPO", "GCN", "Multi-Agent Systems", "Control Barrier Functions", "Python"],
+  github: "https://github.com/sreesaivardhan/SWARM-HMARL",
+  category: "AI",
+  highlight: null,
+},
+  {
+    title: "SecureGov",
+    subtitle: "Document Management",
+    description:
+      "Secure document management platform featuring encrypted file handling, role-based access control, Google OAuth, JWT authentication, audit tracking, and controlled document sharing workflows.",
+    tags: ["Node.js", "Express.js", "MongoDB", "Firebase Storage", "JWT", "Google OAuth", "RBAC", "Security"],
+    github: "https://github.com/sreesaivardhan/SecureGov",
+     live: "https://securegov.netlify.app",
+    category: "Web",
+    highlight: null,
+  },
 {
   title: "Semantic Search Engine",
   subtitle: "Cluster-Aware Semantic Search System",
