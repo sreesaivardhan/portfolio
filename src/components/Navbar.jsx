@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { label: 'About',          href: '#about' },
-  { label: 'Skills',         href: '#skills' },
-  { label: 'Experience',     href: '#experience' },
-  { label: 'Projects',       href: '#projects' },
-  { label: 'Achievements',   href: '#achievements' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Achievements', href: '#achievements' },
   { label: 'Certifications', href: '#certifications' },
-  { label: 'Contact',        href: '#contact' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 const sectionIds = links.map(l => l.href.slice(1))
@@ -16,7 +16,7 @@ const sectionIds = links.map(l => l.href.slice(1))
 function HamburgerIcon() {
   return (
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect y="4"  width="22" height="2" rx="1" fill="currentColor" />
+      <rect y="4" width="22" height="2" rx="1" fill="currentColor" />
       <rect y="10" width="22" height="2" rx="1" fill="currentColor" />
       <rect y="16" width="22" height="2" rx="1" fill="currentColor" />
     </svg>
@@ -27,15 +27,15 @@ function CloseIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
       <line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="18" y1="2" x2="2"  y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     </svg>
   )
 }
 
 export default function Navbar() {
-  const [scrolled,       setScrolled]       = useState(false)
-  const [open,           setOpen]           = useState(false)
-  const [activeSection,  setActiveSection]  = useState('')
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   // Scroll shadow
   useEffect(() => {
@@ -69,9 +69,8 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled || open ? 'backdrop-blur-md shadow-lg' : 'bg-transparent'
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || open ? 'backdrop-blur-md shadow-lg' : 'bg-transparent'
+          }`}
         style={(scrolled || open) ? { background: 'rgba(34,40,49,0.97)' } : {}}
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -163,13 +162,6 @@ export default function Navbar() {
               </a>
             )
           })}
-
-          {/* Bottom accent */}
-          <div className="mt-auto pt-8 flex items-center gap-3">
-            <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
-            <span className="text-xs font-mono" style={{ color: '#9CA3AF' }}>SSV © 2026</span>
-            <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.06)' }} />
-          </div>
         </nav>
       </div>
     </>
