@@ -5,7 +5,16 @@ export default {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        portfolio: {
+          bg:       '#222831',
+          card:     '#393E46',
+          accent:   '#00ADB5',
+          'accent-hover': '#0BC5D1',
+        },
+      },
+    },
   },
   plugins: [],
 }

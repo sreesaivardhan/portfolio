@@ -11,30 +11,30 @@ import { FaAws, FaJava } from 'react-icons/fa'
 import { VscCode } from 'react-icons/vsc'
 
 const skillIcons = {
-  "Python": SiPython,
-  "C++": SiCplusplus,
-  "JavaScript": SiJavascript,
-  "Java": FaJava,
-  "TensorFlow": SiTensorflow,
-  "PyTorch": SiPytorch,
-  "Scikit-learn": SiScikitlearn,
-  "OpenCV": SiOpencv,
-  "React.js": SiReact,
-  "Node.js": SiNodedotjs,
-  "Express.js": SiExpress,
-  "Streamlit": SiStreamlit,
-  "MongoDB": SiMongodb,
-  "MySQL": SiMysql,
-  "Firebase": SiFirebase,
+  "Python":             SiPython,
+  "C++":                SiCplusplus,
+  "JavaScript":         SiJavascript,
+  "Java":               FaJava,
+  "TensorFlow":         SiTensorflow,
+  "PyTorch":            SiPytorch,
+  "Scikit-learn":       SiScikitlearn,
+  "OpenCV":             SiOpencv,
+  "React.js":           SiReact,
+  "Node.js":            SiNodedotjs,
+  "Express.js":         SiExpress,
+  "Streamlit":          SiStreamlit,
+  "MongoDB":            SiMongodb,
+  "MySQL":              SiMysql,
+  "Firebase":           SiFirebase,
   "Firebase Firestore": SiFirebase,
-  "AWS": FaAws,
+  "AWS":                FaAws,
   "Google Cloud Platform": SiGooglecloud,
-  "Docker": SiDocker,
-  "Git": SiGit,
-  "Jupyter Notebook": SiJupyter,
-  "Postman": SiPostman,
-  "Arduino": SiArduino,
-  "VS Code": VscCode,
+  "Docker":             SiDocker,
+  "Git":                SiGit,
+  "Jupyter Notebook":   SiJupyter,
+  "Postman":            SiPostman,
+  "Arduino":            SiArduino,
+  "VS Code":            VscCode,
 }
 
 const colors = {
@@ -49,19 +49,34 @@ const colors = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 bg-slate-800/40">
+    <section id="skills" className="py-32 px-6" style={{ background: '#222831' }}>
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-white mb-2">Technical Skills</h2>
-        <div className="w-16 h-1 bg-cyan-400 mb-12"></div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {Object.entries(skills).map(([cat, items]) => (
-            <div key={cat} className="bg-slate-800 border border-slate-700 rounded-xl p-5">
-              <h3 className="text-white font-semibold text-xs tracking-widest mb-4">{cat.toUpperCase()}</h3>
+        <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Technical Skills</h2>
+        <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {Object.entries(skills).map(([cat, items], cardIndex) => (
+            <div
+              key={cat}
+              className="rounded-xl p-6 transition-transform duration-200 hover:-translate-y-1"
+              style={{ background: '#393E46', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              <h3 className="font-semibold text-xs tracking-widest mb-5" style={{ color: '#F5F5F5' }}>
+                {cat.toUpperCase()}
+              </h3>
               <div className="flex flex-wrap gap-2">
-                {items.map(s => {
+                {items.map((s, chipIdx) => {
                   const Icon = skillIcons[s]
                   return (
-                    <span key={s} className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border ${colors[cat]}`}>
+                    <span
+                      key={s}
+                      className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border ${colors[cat]}`}
+                      style={{
+                        opacity: 0,
+                        animation: 'fadeIn 0.3s ease forwards',
+                        animationDelay: `${cardIndex * 50 + chipIdx * 35}ms`,
+                      }}
+                    >
                       {Icon && <Icon className="text-sm flex-shrink-0" />}
                       {s}
                     </span>

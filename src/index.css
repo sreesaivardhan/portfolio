@@ -2,6 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  --bg-hero:       #0F172A;
+  --bg:            #222831;
+  --card:          #393E46;
+  --accent:        #00ADB5;
+  --accent-hover:  #0BC5D1;
+  --text-primary:  #F5F5F5;
+  --text-secondary:#CFCFCF;
+  --text-muted:    #9CA3AF;
+  --border:        rgba(255, 255, 255, 0.08);
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes loadingBar {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── Loading Screen ─────────────────────────────────────────── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #222831;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 9999;
+  transition: opacity 0.4s ease;
+}
+
+.loading-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  font-family: 'Inter', sans-serif;
+}
+
+.loading-bar-track {
+  width: 180px;
+  height: 3px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 99px;
+  animation: loadingBar 0.55s ease forwards;
+}
+
+.loading-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  font-family: 'Inter', monospace;
+}
+
+/* ─── Typing cursor ──────────────────────────────────────────── */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--accent);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
 }

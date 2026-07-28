@@ -8,8 +8,9 @@ export const personalInfo = {
   phone: "+91 8332839135",
   github: "https://github.com/sreesaivardhan",
   linkedin: "https://linkedin.com/in/saivardhan06",
+  leetcode: "https://leetcode.com/u/sreesaivardhanS",
   tagline:
-    "Building intelligent systems at the intersection of AI and Full Stack Engineering.",
+    "Building scalable AI-powered applications using modern web technologies.",
 };
 
 export const education = {
@@ -18,15 +19,14 @@ export const education = {
   cgpa: "9.07",
   graduation: "June 2027",
   coursework: [
-    "Artificial Intelligence",
-    "Machine Learning",
     "Data Structures & Algorithms",
     "Operating Systems",
     "Computer Networks",
     "Database Systems",
+    "Artificial Intelligence",
+    "Machine Learning",
     "Deep Learning",
-    "OOps & Cloud Computing",
-    "web Development",
+    "Cloud Computing",
   ],
 };
 
@@ -53,10 +53,10 @@ export const experience = [
     duration: "June 2025 – September 2025",
     type: "Remote",
     points: [
-      "Developed 4 full-stack web applications using Node.js, Express.js, MongoDB, and Firebase.",
-      "Built enterprise healthcare management system with real-time dashboards and role-based access control.",
-      "Implemented JWT authentication systems and secure REST API architectures.",
-      "Delivered secure document management platform with encrypted file handling and audit logging.",
+      "Built 4 full-stack web applications using Node.js, Express.js, MongoDB, and Firebase.",
+      "Developed an enterprise healthcare management system with real-time dashboards and role-based access control.",
+      "Implemented JWT authentication and secure REST API architectures across multiple projects.",
+      "Delivered a secure document management platform with encrypted file handling and audit logging.",
     ],
   },
 ];
@@ -122,7 +122,7 @@ export const projects = [
       "Secure document management platform featuring encrypted file handling, role-based access control, Google OAuth, JWT authentication, audit tracking, and controlled document sharing workflows.",
     tags: ["Node.js", "Express.js", "MongoDB", "Firebase Storage", "JWT", "Google OAuth", "RBAC", "Security"],
     github: "https://github.com/sreesaivardhan/SecureGov",
-     live: "https://securegov.netlify.app",
+    live: "https://securegov.netlify.app",
     category: "Web",
     highlight: null,
   },
@@ -143,7 +143,7 @@ export const projects = [
       "Real-time multi-room communication platform built with Socket.IO featuring live messaging, typing indicators, presence tracking, and resilient WebSocket connectivity.",
     tags: ["Socket.IO", "WebSockets", "Node.js", "Express.js", "Real-Time", "Communication"],
     github: "https://github.com/sreesaivardhan/ChatChime",
-      live: "https://chat-chimes.netlify.app",
+    live: "https://chat-chimes.netlify.app",
     category: "Web",
     highlight: null,
   },
@@ -184,8 +184,8 @@ export const projects = [
       "Ensemble fraud detection system combining XGBoost, Random Forest, and Logistic Regression with SMOTE balancing for highly imbalanced transaction datasets.",
     tags: ["XGBoost", "Random Forest", "Scikit-learn", "Fraud Detection", "SMOTE", "Feature Engineering"],
     github: "https://github.com/sreesaivardhan/ML-FRAUD-DETECTION-PROJECT",
-    category: "AI",  
-    highlight: null, 
+    category: "AI",
+    highlight: null,
   },
  {
   title: "LensLore",
@@ -207,36 +207,49 @@ export const certifications = [
     issuer: "Amazon Web Services",
     date: "October 2025",
     badge: "aws",
+    verify: "https://www.credly.com/badges/8ae6a057-a32b-4844-9df4-53d15f2ad8f2/public_url",
   },
   {
     title: "AWS Academy Graduate – Cloud Foundations",
     issuer: "Amazon Web Services",
     date: "September 2025",
     badge: "aws",
+    verify: "https://www.credly.com/badges/f9498fa6-f2a3-4d3d-8a37-6287ea94d202/public_url",
   },
   {
     title: "Develop GenAI Apps with Gemini and Streamlit",
     issuer: "Google Cloud",
     date: "2025",
     badge: "google",
+    verify: "https://www.credly.com/badges/a2282c0b-a0af-405a-9572-5503aa3d0eeb/public_url",
   },
   {
     title: "Inspect Rich Documents with Gemini Multimodality & RAG",
     issuer: "Google Cloud",
     date: "2025",
     badge: "google",
+    verify: "https://www.credly.com/badges/5f9a8f1b-2e3f-43d5-96f5-90f03500675f/public_url",
   },
   {
     title: "Prompt Design in Vertex AI",
     issuer: "Google Cloud",
     date: "2025",
     badge: "google",
+    verify: "https://www.credly.com/badges/4cbdbf23-5f95-4b5e-b7ee-1651134eb1b9/public_url",
+  },
+  {
+    title: "Journey to Cloud: Envisioning Your Solution",
+    issuer: "IBM SkillsBuild",
+    date: "2025",
+    badge: "ibm",
+    verify: "https://www.credly.com/badges/54b30965-31bc-4b43-9ef7-fe65ac4c1057/public_url",
   },
   {
     title: "Getting Started with Artificial Intelligence",
     issuer: "IBM SkillsBuild",
     date: "June 2025",
     badge: "ibm",
+    verify: "https://www.credly.com/badges/dbc17ab4-a600-42a0-a1d3-0032a113f00a/public_url",
   },
 ];
 
