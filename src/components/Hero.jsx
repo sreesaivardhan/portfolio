@@ -77,17 +77,6 @@ export default function Hero() {
           <a
             href="#projects"
             className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
-            style={{ background: '#00ADB5', color: '#F5F5F5' }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#0BC5D1' }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#00ADB5' }}
-          >
-            Explore My Work
-          </a>
-
-          {/* ── SECONDARY CTA — Contact Me ── */}
-          <a
-            href="#contact"
-            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', color: '#F5F5F5' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(0,173,181,0.12)'
@@ -99,6 +88,17 @@ export default function Hero() {
               e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'
               e.currentTarget.style.color = '#F5F5F5'
             }}
+          >
+            Explore My Work
+          </a>
+
+          {/* ── SECONDARY CTA — Contact Me ── */}
+          <a
+            href="#contact"
+            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
+            style={{ background: '#00ADB5', color: '#F5F5F5' }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#0BC5D1' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#00ADB5' }}
           >
             Contact Me
           </a>
