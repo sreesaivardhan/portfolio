@@ -41,7 +41,7 @@ export default function Hero() {
       className="min-h-screen flex items-center justify-center px-6 pt-20"
       style={{ background: '#222831' }}
     >
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center w-full">
         <p className="text-sm font-mono tracking-widest mb-4" style={{ color: '#00ADB5' }}>
           HI, I'M
         </p>
@@ -65,11 +65,29 @@ export default function Hero() {
           {personalInfo.tagline}
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          {/* Primary CTA */}
+        {/*
+          Button layout:
+          • Mobile  → stack vertically, each button full-width
+          • Desktop → side by side in a row
+          All three buttons share identical dimensions (py-3.5, same font/radius).
+        */}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-4 w-full sm:w-auto mx-auto max-w-xs sm:max-w-none">
+
+          {/* ── PRIMARY CTA ── */}
           <a
             href="#projects"
-            className="px-8 py-3.5 font-semibold rounded-lg transition-all duration-200"
+            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
+            style={{ background: '#00ADB5', color: '#F5F5F5' }}
+            onMouseEnter={e => { e.currentTarget.style.background = '#0BC5D1' }}
+            onMouseLeave={e => { e.currentTarget.style.background = '#00ADB5' }}
+          >
+            Explore My Work
+          </a>
+
+          {/* ── SECONDARY CTA — Contact Me ── */}
+          <a
+            href="#contact"
+            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', color: '#F5F5F5' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(0,173,181,0.12)'
@@ -82,26 +100,15 @@ export default function Hero() {
               e.currentTarget.style.color = '#F5F5F5'
             }}
           >
-            Explore My Work
-          </a>
-
-          {/* Secondary CTA — Contact Me */}
-          <a
-            href="#contact"
-            className="px-8 py-3.5 font-semibold rounded-lg transition-all duration-200"
-            style={{ background: '#00ADB5', color: '#F5F5F5' }}
-            onMouseEnter={e => { e.currentTarget.style.background = '#0BC5D1' }}
-            onMouseLeave={e => { e.currentTarget.style.background = '#00ADB5' }}
-          >
             Contact Me
           </a>
 
-          {/* Secondary CTA — Download Resume */}
+          {/* ── SECONDARY CTA — Download Resume ── */}
           <a
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3.5 font-semibold rounded-lg transition-all duration-200"
+            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', color: '#F5F5F5' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(0,173,181,0.12)'
@@ -116,6 +123,7 @@ export default function Hero() {
           >
             Download Resume
           </a>
+
         </div>
       </div>
     </section>
