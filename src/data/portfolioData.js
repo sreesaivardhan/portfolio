@@ -16,7 +16,6 @@ export const personalInfo = {
 export const education = {
   degree: "B.Tech in Computer Science and Engineering (AIML)",
   university: "VIT-AP University",
-  cgpa: "9.07",
   graduation: "June 2027",
   coursework: [
     "Data Structures & Algorithms",
@@ -31,19 +30,63 @@ export const education = {
 };
 
 export const skills = {
-  "Programming": ["Python", "C++", "JavaScript", "Java", "SQL"],
+  "Programming": [
+    "Python",
+    "Java",
+    "C++",
+    "JavaScript",
+    "TypeScript",
+    "SQL"
+  ],
+
   "AI / ML": [
-    "TensorFlow", "PyTorch", "Scikit-learn", "OpenCV",
-    "Transformers", "Vertex AI", "Gemini API", "CNN", "LSTM",
+    "PyTorch",
+    "TensorFlow",
+    "Scikit-learn",
+    "Transformers",
+    "OpenCV",
+    "GenAI",
+    "Gemini API",
+    "Streamlit",
+    "RAG",
+    "XGBoost",
+    "Computer Vision"
   ],
+
   "Web & Backend": [
-    "React.js", "Node.js", "Express.js", "REST APIs",
-    "WebSockets", "Streamlit", "HTML/CSS",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "REST APIs",
+    "Socket.IO",
+    "WebSockets",
+    "FastAPI"
   ],
-  "Cloud & DevOps": ["AWS", "Google Cloud Platform", "Firebase", "Docker"],
-  "Databases": ["MongoDB", "MySQL", "Firebase Firestore"],
-  "IoT & Embedded": ["ESP32", "Arduino", "Sensor Integration"],
-  "Developer Tools": ["Git", "VS Code", "Jupyter Notebook", "Postman"],
+
+  "Cloud & Databases": [
+    "AWS",
+    "Google Cloud",
+    "Firebase",
+    "PostgreSQL",
+    "MongoDB",
+    "MySQL",
+    "Prisma"
+  ],
+
+  "Developer Tools": [
+    "Git",
+    "GitHub",
+    "Docker",
+    "VS Code",
+    "Jupyter",
+    "Postman"
+  ],
+
+  "IoT & Embedded": [
+    "ESP32",
+    "Arduino",
+    "Sensor Integration"
+  ]
 };
 
 export const experience = [
@@ -63,27 +106,27 @@ export const experience = [
 
 export const projects = [
   {
-  title: "NexTask",
-  subtitle: "AI-Powered Collaborative Kanban Platform",
-  description:
-    "Production-ready collaborative Kanban platform with real-time task synchronization, AI-powered project insights, GitHub issue import, Chrome extension, and secure PostgreSQL-backed authentication.",
-  tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "OAuth", "AI"],
-  github: "https://github.com/sreesaivardhan/nextask",
-  live: "https://nextask-flame.vercel.app",
-  category: "Web",
-  highlight: null,
-},
+    title: "NexTask",
+    subtitle: "AI-Powered Collaborative Kanban Platform",
+    description:
+      "Production-ready collaborative Kanban platform with real-time task synchronization, AI-powered project insights, GitHub issue import, Chrome extension, and secure PostgreSQL-backed authentication.",
+    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "OAuth", "AI"],
+    github: "https://github.com/sreesaivardhan/nextask",
+    live: "https://nextask-flame.vercel.app",
+    category: "Web",
+    highlight: null,
+  },
   {
-  title: "SkillSync",
-  subtitle: "Skill Exchange & Collaboration Platform",
-  description:
-    "Full-stack MERN collaboration platform enabling peer-to-peer skill exchange with real-time matching, messaging, file sharing, collaborative notes, AI-powered recommendations, and a credit-based reward system.",
-  tags: ["MERN", "React.js", "Node.js", "MongoDB", "Socket.IO", "JWT", "Google OAuth", "Gemini AI", "Real-Time"],
-  github: "https://github.com/sreesaivardhan/skillsync",
-  live: "https://skillsync-nine-mauve.vercel.app",
-  category: "Web",
-  highlight: null,
-},
+    title: "SkillSync",
+    subtitle: "Skill Exchange & Collaboration Platform",
+    description:
+      "Full-stack MERN collaboration platform enabling peer-to-peer skill exchange with real-time matching, messaging, file sharing, collaborative notes, AI-powered recommendations, and a credit-based reward system.",
+    tags: ["MERN", "React.js", "Node.js", "MongoDB", "Socket.IO", "JWT", "Google OAuth", "Gemini AI", "Real-Time"],
+    github: "https://github.com/sreesaivardhan/skillsync",
+    live: "https://skillsync-nine-mauve.vercel.app",
+    category: "Web",
+    highlight: null,
+  },
   {
     title: "Retinal Disease Detection",
     subtitle: "Medical AI",
@@ -95,26 +138,26 @@ export const projects = [
     highlight: "72.9% clinical classification accuracy",
   },
   {
-  title: "MediCore",
-  subtitle: "Healthcare Management Platform",
-  description:
-    "Full-stack healthcare management platform supporting appointment booking, doctor assignment, operation theater scheduling, Razorpay payments, and role-based dashboards with Firebase-powered real-time updates.",
-  tags: ["Firebase", "Firestore", "Cloud Functions", "Razorpay", "RBAC", "Authentication", "Real-Time", "Healthcare"],
-  github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
-  live: "https://mediicore.netlify.app",
-  category: "Web",
-  highlight: null,
-},
-{
-  title: "SWARM",
-  subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
-  description:
-    "Hierarchical multi-agent reinforcement learning framework for autonomous warehouse coordination combining PPO navigation, GCN task allocation, and safety-aware control mechanisms.",
-  tags: ["Reinforcement Learning", "PPO", "GCN", "Multi-Agent Systems", "Control Barrier Functions", "Python"],
-  github: "https://github.com/sreesaivardhan/SWARM-HMARL",
-  category: "AI",
-  highlight: null,
-},
+    title: "MediCore",
+    subtitle: "Healthcare Management Platform",
+    description:
+      "Full-stack healthcare management platform supporting appointment booking, doctor assignment, operation theater scheduling, Razorpay payments, and role-based dashboards with Firebase-powered real-time updates.",
+    tags: ["Firebase", "Firestore", "Cloud Functions", "Razorpay", "RBAC", "Authentication", "Real-Time", "Healthcare"],
+    github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
+    live: "https://mediicore.netlify.app",
+    category: "Web",
+    highlight: null,
+  },
+  {
+    title: "SWARM",
+    subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
+    description:
+      "Hierarchical multi-agent reinforcement learning framework for autonomous warehouse coordination combining PPO navigation, GCN task allocation, and safety-aware control mechanisms.",
+    tags: ["Reinforcement Learning", "PPO", "GCN", "Multi-Agent Systems", "Control Barrier Functions", "Python"],
+    github: "https://github.com/sreesaivardhan/SWARM-HMARL",
+    category: "AI",
+    highlight: null,
+  },
   {
     title: "SecureGov",
     subtitle: "Document Management",
@@ -126,17 +169,17 @@ export const projects = [
     category: "Web",
     highlight: null,
   },
-{
-  title: "Semantic Search Engine",
-  subtitle: "Cluster-Aware Semantic Search System",
-  description:
-    "Cluster-aware semantic retrieval system leveraging FAISS vector search, GMM clustering, and intelligent caching for efficient paraphrase-aware document discovery.",
-  tags: ["FAISS", "NLP", "Semantic Search", "FastAPI", "Vector Search", "Information Retrieval"],
-  github: "https://github.com/sreesaivardhan/semantic-search-system",
-  category: "AI",
-  highlight: null,
-},
-{
+  {
+    title: "Semantic Search Engine",
+    subtitle: "Cluster-Aware Semantic Search System",
+    description:
+      "Cluster-aware semantic retrieval system leveraging FAISS vector search, GMM clustering, and intelligent caching for efficient paraphrase-aware document discovery.",
+    tags: ["FAISS", "NLP", "Semantic Search", "FastAPI", "Vector Search", "Information Retrieval"],
+    github: "https://github.com/sreesaivardhan/semantic-search-system",
+    category: "AI",
+    highlight: null,
+  },
+  {
     title: "ChatChime",
     subtitle: "Real-Time Chat App",
     description:
@@ -158,16 +201,16 @@ export const projects = [
     highlight: "Top 10 — VIT-AP Engineering Clinics Expo",
   },
   {
-  title: "RxOCR",
-  subtitle: "Multi-Domain Prescription OCR Prototype",
-  description:
-    "Healthcare OCR system for digitizing handwritten prescriptions through confidence-aware extraction and domain-specific post-processing pipelines.",
-  tags: ["OCR", "EasyOCR", "Healthcare AI", "Document Processing", "Information Extraction", "Python"],
-  github: "https://github.com/sreesaivardhan/prescription-ocr-prototype",
-  category: "AI",
-  highlight: null,
-},
-{
+    title: "RxOCR",
+    subtitle: "Multi-Domain Prescription OCR Prototype",
+    description:
+      "Healthcare OCR system for digitizing handwritten prescriptions through confidence-aware extraction and domain-specific post-processing pipelines.",
+    tags: ["OCR", "EasyOCR", "Healthcare AI", "Document Processing", "Information Extraction", "Python"],
+    github: "https://github.com/sreesaivardhan/prescription-ocr-prototype",
+    category: "AI",
+    highlight: null,
+  },
+  {
     title: "Gemini Pro Financial Decoder",
     subtitle: "GenAI Application",
     description:
@@ -187,18 +230,18 @@ export const projects = [
     category: "AI",
     highlight: null,
   },
- {
-  title: "LensLore",
-  subtitle: "Photography Journal Platform",
-  description:
-    "Metadata-driven photography platform featuring dynamic JSON-powered content rendering, editorial gallery experiences, collection discovery, theme persistence, and location-integrated visual storytelling.",
-  tags: [
-    "JavaScript", "HTML5", "CSS3", "JSON", "Responsive Design", "UI/UX", "Editorial Design", "Frontend"],
-  github: "https://github.com/sreesaivardhan/virtual-gallery",
-  live: "https://virtual-gallery-gamma-woad.vercel.app",
-  category: "Web",
-  highlight: null,
-}
+  {
+    title: "LensLore",
+    subtitle: "Photography Journal Platform",
+    description:
+      "Metadata-driven photography platform featuring dynamic JSON-powered content rendering, editorial gallery experiences, collection discovery, theme persistence, and location-integrated visual storytelling.",
+    tags: [
+      "JavaScript", "HTML5", "CSS3", "JSON", "Responsive Design", "UI/UX", "Editorial Design", "Frontend"],
+    github: "https://github.com/sreesaivardhan/virtual-gallery",
+    live: "https://virtual-gallery-gamma-woad.vercel.app",
+    category: "Web",
+    highlight: null,
+  }
 ];
 
 export const certifications = [

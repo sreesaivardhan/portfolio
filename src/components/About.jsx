@@ -88,10 +88,6 @@ export default function About() {
 
               <div className="mt-6 space-y-3 text-sm">
                 <div className="flex justify-between">
-                  <span style={{ color: '#9CA3AF' }}>CGPA</span>
-                  <span className="font-bold" style={{ color: '#00ADB5' }}>{education.cgpa}</span>
-                </div>
-                <div className="flex justify-between">
                   <span style={{ color: '#9CA3AF' }}>Graduation</span>
                   <span style={{ color: '#CFCFCF' }}>{education.graduation}</span>
                 </div>
