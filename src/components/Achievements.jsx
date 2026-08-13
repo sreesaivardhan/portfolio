@@ -10,7 +10,7 @@ const iconMap = {
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-32 px-6" style={{ background: '#222831' }}>
+    <section id="achievements" className="py-20 px-5 md:py-32 md:px-6" style={{ background: '#222831' }}>
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Achievements &amp; Leadership</h2>
         <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />
@@ -21,7 +21,7 @@ export default function Achievements() {
             return (
               <div
                 key={i}
-                className="rounded-2xl p-8 transition-colors duration-200"
+                className="rounded-2xl p-6 md:p-8 transition-colors duration-200"
                 style={{ background: '#393E46', border: '1px solid rgba(255,255,255,0.08)' }}
                 onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'}
                 onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}

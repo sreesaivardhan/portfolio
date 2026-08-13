@@ -2,7 +2,7 @@ import { experience } from '../data/portfolioData'
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-32 px-6" style={{ background: '#222831' }}>
+    <section id="experience" className="py-20 px-5 md:py-32 md:px-6" style={{ background: '#222831' }}>
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Experience</h2>
         <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />
@@ -11,19 +11,19 @@ export default function Experience() {
           {experience.map((job, i) => (
             <div
               key={i}
-              className="rounded-2xl p-10 transition-colors duration-200"
+              className="rounded-2xl p-6 md:p-10 transition-colors duration-200"
               style={{ background: '#393E46', border: '1px solid rgba(255,255,255,0.08)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
             >
               <div className="flex flex-wrap justify-between items-start mb-7">
                 <div>
-                  <h3 className="text-xl font-bold" style={{ color: '#F5F5F5' }}>{job.title}</h3>
-                  <p className="text-base font-semibold mt-1.5" style={{ color: '#00ADB5' }}>{job.company}</p>
+                  <h3 className="text-lg md:text-xl font-bold" style={{ color: '#F5F5F5' }}>{job.title}</h3>
+                  <p className="text-sm md:text-base font-semibold mt-1.5" style={{ color: '#00ADB5' }}>{job.company}</p>
                 </div>
                 <div className="text-right mt-2 md:mt-0">
-                  <p className="text-sm" style={{ color: '#9CA3AF' }}>{job.duration}</p>
-                  <p className="text-sm mt-1" style={{ color: '#9CA3AF' }}>{job.type}</p>
+                  <p className="text-xs md:text-sm" style={{ color: '#9CA3AF' }}>{job.duration}</p>
+                  <p className="text-xs md:text-sm mt-1" style={{ color: '#9CA3AF' }}>{job.type}</p>
                 </div>
               </div>
 

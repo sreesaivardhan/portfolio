@@ -10,42 +10,42 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center py-32 px-6"
+      className="min-h-screen flex items-center py-20 px-5 md:py-32 md:px-6"
       style={{ background: '#222831' }}
     >
       <div className="max-w-5xl mx-auto w-full">
         <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>About Me</h2>
         <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />
 
-        <div className="grid md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
 
           {/* Left — bio */}
           <div>
             <p className="text-xs font-mono tracking-widest mb-2" style={{ color: '#00ADB5' }}>NAME</p>
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 leading-snug" style={{ color: '#F5F5F5' }}>
+            <h3 className="text-3xl md:text-2xl lg:text-3xl font-bold mb-8 leading-snug" style={{ color: '#F5F5F5' }}>
               Sirasanagandla<br />Sree Sai Vardhan
             </h3>
 
-            <p className="text-sm leading-relaxed mb-5" style={{ color: '#CFCFCF' }}>
+            <p className="text-base md:text-sm leading-relaxed mb-5" style={{ color: '#CFCFCF' }}>
               I'm a Full Stack Developer and AI enthusiast passionate about building scalable
               applications that solve real-world problems. My interests span machine learning,
               backend systems, cloud technologies, and modern web development.
             </p>
 
-            <p className="text-sm leading-relaxed mb-5" style={{ color: '#9CA3AF' }}>
+            <p className="text-base md:text-sm leading-relaxed mb-5" style={{ color: '#9CA3AF' }}>
               I've built projects across medical imaging AI, financial fraud detection, GenAI
               applications, IoT-enabled deep learning, and secure cloud-native systems, with a
               focus on production-ready software and measurable impact.
             </p>
 
             {/* Location */}
-            <div className="flex items-center gap-2 text-base mb-8" style={{ color: '#9CA3AF' }}>
+            <div className="flex items-center gap-2 text-sm md:text-base mb-8" style={{ color: '#9CA3AF' }}>
               <HiLocationMarker style={{ color: '#00ADB5' }} className="text-lg flex-shrink-0" />
               <span>Hyderabad, Telangana, India</span>
             </div>
 
             {/* Social links */}
-            <div className="flex items-center flex-nowrap gap-6">
+            <div className="flex items-center flex-wrap md:flex-nowrap gap-4 md:gap-6">
               {[
                 { href: personalInfo.github,            Icon: SiGithub,   label: 'GitHub' },
                 { href: personalInfo.linkedin,          Icon: FaLinkedin, label: 'LinkedIn' },
@@ -63,7 +63,7 @@ export default function About() {
                   onMouseEnter={e => e.currentTarget.style.color = '#00ADB5'}
                   onMouseLeave={e => e.currentTarget.style.color = '#CFCFCF'}
                 >
-                  <Icon className="text-lg" />
+                  <Icon className="text-base md:text-lg" />
                   {label}
                 </a>
               ))}
@@ -73,7 +73,7 @@ export default function About() {
           {/* Right — education card */}
           <div>
             <div
-              className="rounded-2xl p-8"
+              className="rounded-2xl w-full p-6 md:p-8"
               style={{ background: '#393E46', border: '1px solid rgba(255,255,255,0.08)' }}
             >
               <p className="font-semibold text-xs tracking-widest mb-5" style={{ color: '#00ADB5' }}>

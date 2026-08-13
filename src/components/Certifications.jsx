@@ -10,7 +10,7 @@ const certStyle = {
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-32 px-6" style={{ background: '#222831' }}>
+    <section id="certifications" className="py-20 px-5 md:py-32 md:px-6" style={{ background: '#222831' }}>
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Certifications</h2>
         <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />

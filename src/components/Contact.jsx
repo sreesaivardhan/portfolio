@@ -5,11 +5,11 @@ import { HiMail, HiPhone } from 'react-icons/hi'
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6" style={{ background: '#222831' }}>
+    <section id="contact" className="py-20 px-5 md:py-32 md:px-6" style={{ background: '#222831' }}>
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Get In Touch</h2>
         <div className="w-16 h-1 mb-10 mx-auto" style={{ background: '#00ADB5' }} />
-        <p className="text-lg mb-12 leading-relaxed" style={{ color: '#9CA3AF' }}>
+        <p className="text-base md:text-lg mb-12 leading-relaxed" style={{ color: '#9CA3AF' }}>
           Open to internship opportunities, AI/ML roles, and interesting collaborations.
           Feel free to reach out!
         </p>

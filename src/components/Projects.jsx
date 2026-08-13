@@ -8,7 +8,7 @@ export default function Projects() {
   const filtered = active === 'All' ? projects : projects.filter(p => p.category === active)
 
   return (
-    <section id="projects" className="py-32 px-6" style={{ background: '#222831' }}>
+    <section id="projects" className="py-20 px-5 md:py-32 md:px-6" style={{ background: '#222831' }}>
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Projects</h2>
         <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />
@@ -35,7 +35,7 @@ export default function Projects() {
           {filtered.map((p, i) => (
             <div
               key={i}
-              className="rounded-2xl p-6 flex flex-col hover:-translate-y-1 transition-all duration-200"
+              className="rounded-2xl p-5 md:p-6 flex flex-col hover:-translate-y-1 transition-all duration-200"
               style={{ background: '#393E46', border: '1px solid rgba(255,255,255,0.08)' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}

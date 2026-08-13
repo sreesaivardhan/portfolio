@@ -60,19 +60,19 @@ const colors = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32 px-6" style={{ background: '#222831' }}>
+    <section id="skills" className="py-20 px-5 md:py-32 md:px-6" style={{ background: '#222831' }}>
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Technical Skills</h2>
         <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {Object.entries(skills).map(([cat, items], cardIndex) => (
             <div
               key={cat}
-              className="rounded-xl p-6 transition-transform duration-200 hover:-translate-y-1"
+              className="rounded-xl p-5 md:p-6 transition-transform duration-200 hover:-translate-y-1"
               style={{ background: '#393E46', border: '1px solid rgba(255,255,255,0.08)' }}
             >
-              <h3 className="font-semibold text-xs tracking-widest mb-5" style={{ color: '#F5F5F5' }}>
+              <h3 className="font-semibold text-sm md:text-xs tracking-widest mb-5" style={{ color: '#F5F5F5' }}>
                 {cat.toUpperCase()}
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -81,14 +81,14 @@ export default function Skills() {
                   return (
                     <span
                       key={s}
-                      className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border ${colors[cat]}`}
+                      className={`flex items-center gap-1.5 text-sm md:text-xs px-3 py-1.5 rounded-full border ${colors[cat]}`}
                       style={{
                         opacity: 0,
                         animation: 'fadeIn 0.3s ease forwards',
                         animationDelay: `${cardIndex * 50 + chipIdx * 35}ms`,
                       }}
                     >
-                      {Icon && <Icon className="text-xs flex-shrink-0" />}
+                      {Icon && <Icon className="text-sm md:text-xs flex-shrink-0" />}
                       {s}
                     </span>
                   )
