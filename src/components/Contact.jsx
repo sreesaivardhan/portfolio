@@ -66,7 +66,7 @@ export default function Contact() {
           })}
         </div>
 
-        <p className="text-sm" style={{ color: 'rgba(156,163,175,0.4)' }}>
+        <p className="text-xs" style={{ color: 'rgba(156,163,175,0.4)' }}>
           Portfolio · Sirasanagandla Sree Sai Vardhan © 2026
         </p>
       </div>

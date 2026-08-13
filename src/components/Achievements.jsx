@@ -34,7 +34,7 @@ export default function Achievements() {
                     <Icon className="text-xl" style={{ color: '#00ADB5' }} />
                   </div>
                   <div>
-                    <h3 className="font-bold leading-snug" style={{ color: '#F5F5F5' }}>{a.title}</h3>
+                    <h3 className="text-base font-bold leading-snug" style={{ color: '#F5F5F5' }}>{a.title}</h3>
                     <p className="text-sm mt-1" style={{ color: '#00ADB5' }}>{a.org}</p>
                     <p className="text-xs mt-0.5" style={{ color: '#9CA3AF' }}>{a.duration}</p>
                   </div>

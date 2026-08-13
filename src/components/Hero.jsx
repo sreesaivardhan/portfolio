@@ -46,7 +46,7 @@ export default function Hero() {
           HI, I'M
         </p>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6" style={{ color: '#F5F5F5' }}>
+        <h1 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: '#F5F5F5' }}>
           Sree Sai Vardhan
         </h1>
 
@@ -61,7 +61,7 @@ export default function Hero() {
           </span>
         </div>
 
-        <p className="text-lg max-w-2xl mx-auto mb-12 leading-relaxed" style={{ color: '#9CA3AF' }}>
+        <p className="text-lg max-w-4xl mx-auto mb-12 leading-relaxed whitespace-normal md:whitespace-nowrap" style={{ color: '#9CA3AF' }}>
           {personalInfo.tagline}
         </p>
 
@@ -71,12 +71,12 @@ export default function Hero() {
           • Desktop → side by side in a row
           All three buttons share identical dimensions (py-3.5, same font/radius).
         */}
-        <div className="flex flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-4 w-full sm:w-auto mx-auto max-w-xs sm:max-w-none">
+        <div className="flex flex-col sm:flex-row sm:flex-nowrap sm:justify-center gap-4 w-full sm:w-auto mx-auto max-w-xs sm:max-w-none">
 
           {/* ── PRIMARY CTA ── */}
           <a
             href="#projects"
-            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
+            className="flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', color: '#F5F5F5' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(0,173,181,0.12)'
@@ -95,7 +95,7 @@ export default function Hero() {
           {/* ── SECONDARY CTA — Contact Me ── */}
           <a
             href="#contact"
-            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
+            className="flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: '#00ADB5', color: '#F5F5F5' }}
             onMouseEnter={e => { e.currentTarget.style.background = '#0BC5D1' }}
             onMouseLeave={e => { e.currentTarget.style.background = '#00ADB5' }}
@@ -108,7 +108,7 @@ export default function Hero() {
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center px-8 py-3.5 font-semibold rounded-lg transition-all duration-200 text-center"
+            className="flex items-center justify-center px-8 py-3.5 text-base font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', color: '#F5F5F5' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(0,173,181,0.12)'

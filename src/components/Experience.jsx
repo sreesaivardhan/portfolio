@@ -19,15 +19,15 @@ export default function Experience() {
               <div className="flex flex-wrap justify-between items-start mb-7">
                 <div>
                   <h3 className="text-xl font-bold" style={{ color: '#F5F5F5' }}>{job.title}</h3>
-                  <p className="font-semibold mt-1.5" style={{ color: '#00ADB5' }}>{job.company}</p>
+                  <p className="text-base font-semibold mt-1.5" style={{ color: '#00ADB5' }}>{job.company}</p>
                 </div>
                 <div className="text-right mt-2 md:mt-0">
                   <p className="text-sm" style={{ color: '#9CA3AF' }}>{job.duration}</p>
-                  <p className="text-xs mt-1" style={{ color: '#9CA3AF' }}>{job.type}</p>
+                  <p className="text-sm mt-1" style={{ color: '#9CA3AF' }}>{job.type}</p>
                 </div>
               </div>
 
-              <ul className="space-y-4">
+              <ul className="space-y-3">
                 {job.points.map((pt, j) => (
                   <li key={j} className="flex gap-3 text-sm leading-relaxed" style={{ color: '#CFCFCF' }}>
                     <span className="flex-shrink-0 mt-0.5" style={{ color: '#00ADB5' }}>▸</span>

@@ -92,7 +92,7 @@ export default function Projects() {
                 {p.tags.map(tag => (
                   <span
                     key={tag}
-                    className="text-xs px-2.5 py-1 rounded-full"
+                    className="text-xs px-3 py-1.5 rounded-full"
                     style={{ background: 'rgba(255,255,255,0.06)', color: '#9CA3AF' }}
                   >
                     {tag}

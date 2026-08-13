@@ -1,8 +1,7 @@
 import { skills } from '../data/portfolioData'
 import {
   SiPython, SiCplusplus, SiJavascript, SiTypescript,
-  SiTensorflow, SiPytorch, SiScikitlearn, SiOpencv,
-  SiGemini, SiStreamlit,
+  SiTensorflow, SiPytorch, SiScikitlearn, SiOpencv, SiStreamlit,
   SiReact, SiNodedotjs, SiExpress, SiFastapi, SiSocketdotio,
   SiMongodb, SiMysql, SiPostgresql, SiPrisma, SiFirebase,
   SiGooglecloud, SiDocker,
@@ -23,7 +22,6 @@ const skillIcons = {
   "TensorFlow": SiTensorflow,
   "Scikit-learn": SiScikitlearn,
   "OpenCV": SiOpencv,
-  "Gemini API": SiGemini,
   "Streamlit": SiStreamlit,
 
   "React.js": SiReact,
@@ -90,7 +88,7 @@ export default function Skills() {
                         animationDelay: `${cardIndex * 50 + chipIdx * 35}ms`,
                       }}
                     >
-                      {Icon && <Icon className="text-sm flex-shrink-0" />}
+                      {Icon && <Icon className="text-xs flex-shrink-0" />}
                       {s}
                     </span>
                   )

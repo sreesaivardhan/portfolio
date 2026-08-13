@@ -22,30 +22,30 @@ export default function About() {
           {/* Left — bio */}
           <div>
             <p className="text-xs font-mono tracking-widest mb-2" style={{ color: '#00ADB5' }}>NAME</p>
-            <h3 className="text-2xl font-bold mb-8 leading-snug" style={{ color: '#F5F5F5' }}>
+            <h3 className="text-2xl md:text-3xl font-bold mb-8 leading-snug" style={{ color: '#F5F5F5' }}>
               Sirasanagandla<br />Sree Sai Vardhan
             </h3>
 
-            <p className="text-base leading-relaxed mb-5" style={{ color: '#CFCFCF' }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: '#CFCFCF' }}>
               I'm a Full Stack Developer and AI enthusiast passionate about building scalable
               applications that solve real-world problems. My interests span machine learning,
               backend systems, cloud technologies, and modern web development.
             </p>
 
-            <p className="text-base leading-relaxed mb-5" style={{ color: '#9CA3AF' }}>
+            <p className="text-sm leading-relaxed mb-5" style={{ color: '#9CA3AF' }}>
               I've built projects across medical imaging AI, financial fraud detection, GenAI
               applications, IoT-enabled deep learning, and secure cloud-native systems, with a
               focus on production-ready software and measurable impact.
             </p>
 
             {/* Location */}
-            <div className="flex items-center gap-2 text-sm mb-8" style={{ color: '#9CA3AF' }}>
-              <HiLocationMarker style={{ color: '#00ADB5' }} className="text-base flex-shrink-0" />
+            <div className="flex items-center gap-2 text-base mb-8" style={{ color: '#9CA3AF' }}>
+              <HiLocationMarker style={{ color: '#00ADB5' }} className="text-lg flex-shrink-0" />
               <span>Hyderabad, Telangana, India</span>
             </div>
 
             {/* Social links */}
-            <div className="flex flex-wrap gap-5">
+            <div className="flex items-center flex-nowrap gap-6">
               {[
                 { href: personalInfo.github,            Icon: SiGithub,   label: 'GitHub' },
                 { href: personalInfo.linkedin,          Icon: FaLinkedin, label: 'LinkedIn' },
@@ -101,7 +101,7 @@ export default function About() {
                   {education.coursework.map(c => (
                     <span
                       key={c}
-                      className="text-xs px-2.5 py-1 rounded"
+                      className="text-xs px-3 py-1.5 rounded"
                       style={{ background: 'rgba(255,255,255,0.06)', color: '#CFCFCF' }}
                     >
                       {c}
