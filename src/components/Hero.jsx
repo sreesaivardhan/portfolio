@@ -71,12 +71,12 @@ export default function Hero() {
           • Desktop → side by side in a row
           All three buttons share identical dimensions (py-3.5, same font/radius).
         */}
-        <div className="flex flex-col md:flex-row md:flex-nowrap md:justify-center gap-4 w-full max-w-sm md:max-w-none mx-auto">
+        <div className="flex flex-col items-center md:flex-row md:flex-nowrap md:justify-center gap-3 md:gap-4 w-full mx-auto">
 
           {/* ── PRIMARY CTA ── */}
           <a
             href="#projects"
-            className="flex items-center justify-center w-full md:w-auto px-6 py-3 md:px-8 md:py-3.5 text-base font-semibold rounded-lg transition-all duration-200 text-center"
+            className="flex items-center justify-center w-[240px] max-w-[80vw] md:w-auto px-5 py-2.5 md:px-8 md:py-3.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', color: '#F5F5F5' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(0,173,181,0.12)'
@@ -95,7 +95,7 @@ export default function Hero() {
           {/* ── SECONDARY CTA — Contact Me ── */}
           <a
             href="#contact"
-            className="flex items-center justify-center w-full md:w-auto px-6 py-3 md:px-8 md:py-3.5 text-base font-semibold rounded-lg transition-all duration-200 text-center"
+            className="flex items-center justify-center w-[240px] max-w-[80vw] md:w-auto px-5 py-2.5 md:px-8 md:py-3.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: '#00ADB5', color: '#F5F5F5' }}
             onMouseEnter={e => { e.currentTarget.style.background = '#0BC5D1' }}
             onMouseLeave={e => { e.currentTarget.style.background = '#00ADB5' }}
@@ -108,7 +108,7 @@ export default function Hero() {
             href={RESUME_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-full md:w-auto px-6 py-3 md:px-8 md:py-3.5 text-base font-semibold rounded-lg transition-all duration-200 text-center"
+            className="flex items-center justify-center w-[240px] max-w-[80vw] md:w-auto px-5 py-2.5 md:px-8 md:py-3.5 text-sm md:text-base font-semibold rounded-lg transition-all duration-200 text-center"
             style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.12)', color: '#F5F5F5' }}
             onMouseEnter={e => {
               e.currentTarget.style.background = 'rgba(0,173,181,0.12)'
