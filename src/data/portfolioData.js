@@ -48,9 +48,9 @@ export const skills = {
     "GenAI",
     "Gemini API",
     "Streamlit",
-    "RAG",
     "XGBoost",
-    "Computer Vision"
+    "Computer Vision",
+    "FAISS"
   ],
 
   "Web & Backend": [
@@ -96,10 +96,10 @@ export const experience = [
     duration: "June 2025 – September 2025",
     type: "Remote",
     points: [
-      "Built 4 full-stack web applications using Node.js, Express.js, MongoDB, and Firebase.",
-      "Developed an enterprise healthcare management system with real-time dashboards and role-based access control.",
-      "Implemented JWT authentication and secure REST API architectures across multiple projects.",
-      "Delivered a secure document management platform with encrypted file handling and audit logging.",
+      "Developed and deployed web applications across document management, healthcare, real-time communication, and interactive web domains.",
+      "Implemented authentication, RBAC, REST APIs, WebSocket features, cloud integrations, and responsive frontend experiences using JavaScript, Node.js, Express.js, Firebase, and MongoDB.",
+      "Worked across multiple application architectures including REST-based backends, Firebase-powered services, real-time Socket.IO communication, and static JSON-driven frontend systems.",
+      "Delivered secure document management, healthcare scheduling, real-time communication, and dynamic photography applications during the internship.",
     ],
   },
 ];
@@ -109,7 +109,7 @@ export const projects = [
     title: "NexTask",
     subtitle: "AI-Powered Collaborative Kanban Platform",
     description:
-      "Production-ready collaborative Kanban platform with real-time task synchronization, AI-powered project insights, GitHub issue import, Chrome extension, and secure PostgreSQL-backed authentication.",
+      "Production-ready collaborative Kanban platform with real-time task synchronization, AI-assisted task complexity estimation, GitHub issue import, Chrome extension, optimistic concurrency control, and PostgreSQL-backed authentication.",
     tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "OAuth", "AI"],
     github: "https://github.com/sreesaivardhan/nextask",
     live: "https://nextask-flame.vercel.app",
@@ -120,8 +120,8 @@ export const projects = [
     title: "SkillSync",
     subtitle: "Skill Exchange & Collaboration Platform",
     description:
-      "Full-stack MERN collaboration platform enabling peer-to-peer skill exchange with real-time matching, messaging, file sharing, collaborative notes, AI-powered recommendations, and a credit-based reward system.",
-    tags: ["MERN", "React.js", "Node.js", "MongoDB", "Socket.IO", "JWT", "Google OAuth", "Gemini AI", "Real-Time"],
+      "Full-stack MERN collaboration platform enabling peer-to-peer skill exchange with real-time matchmaking, messaging, collaborative notes, GitHub skill import, reputation tracking, and a credit-based session system.",
+    tags: ["MERN", "React.js", "Node.js", "MongoDB", "Socket.IO", "JWT", "Google OAuth", "Real-Time", "Analytics"],
     github: "https://github.com/sreesaivardhan/skillsync",
     live: "https://skillsync-nine-mauve.vercel.app",
     category: "Web",
@@ -131,17 +131,17 @@ export const projects = [
     title: "Retinal Disease Detection",
     subtitle: "Medical AI",
     description:
-      "Deep learning-based retinal disease classification system using hybrid ConvNeXt-V2 and Swin Transformer architectures trained on the APTOS dataset.",
-    tags: ["PyTorch", "TensorFlow", "ConvNeXt-V2", "Swin Transformer", "Computer Vision", "Medical AI"],
+      "Deep learning-based retinal disease classification system using a custom dual-branch ConvNeXt-V2 and Swin-inspired attention architecture trained on the APTOS 2019 dataset.",
+    tags: ["PyTorch", "TensorFlow", "ConvNeXt-V2", "Swin-inspired Attention", "Computer Vision", "Medical AI"],
     github: "https://github.com/sreesaivardhan/Retinal_Disease_Detection",
     category: "AI",
-    highlight: "72.9% clinical classification accuracy",
+    highlight: null,
   },
   {
     title: "MediCore",
     subtitle: "Healthcare Management Platform",
     description:
-      "Full-stack healthcare management platform supporting appointment booking, doctor assignment, operation theater scheduling, Razorpay payments, and role-based dashboards with Firebase-powered real-time updates.",
+      "Full-stack healthcare management platform supporting appointment booking, doctor workflows, operation theater scheduling, Razorpay payments, and role-based dashboards with Firebase-powered real-time updates.",
     tags: ["Firebase", "Firestore", "Cloud Functions", "Razorpay", "RBAC", "Authentication", "Real-Time", "Healthcare"],
     github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
     live: "https://mediicore.netlify.app",
@@ -150,10 +150,10 @@ export const projects = [
   },
   {
     title: "SWARM",
-    subtitle: "Hierarchical Multi-Agent Reinforcement Learning",
+    subtitle: "Multi-Agent Reinforcement Learning",
     description:
-      "Hierarchical multi-agent reinforcement learning framework for autonomous warehouse coordination combining PPO navigation, GCN task allocation, and safety-aware control mechanisms.",
-    tags: ["Reinforcement Learning", "PPO", "GCN", "Multi-Agent Systems", "Control Barrier Functions", "Python"],
+      "Multi-agent reinforcement learning prototype for warehouse coordination using Gymnasium and RWARE, with Actor-Critic policy learning, reward shaping, and benchmark evaluation.",
+    tags: ["Reinforcement Learning", "Actor-Critic", "REINFORCE", "Multi-Agent Systems", "Gymnasium", "Python"],
     github: "https://github.com/sreesaivardhan/SWARM-HMARL",
     category: "AI",
     highlight: null,
@@ -162,7 +162,7 @@ export const projects = [
     title: "SecureGov",
     subtitle: "Document Management",
     description:
-      "Secure document management platform featuring encrypted file handling, role-based access control, Google OAuth, JWT authentication, audit tracking, and controlled document sharing workflows.",
+      "Secure document management platform featuring Firebase authentication, JWT-protected Express APIs, MongoDB metadata storage, Firebase Storage, family-based sharing, and access-controlled workflows.",
     tags: ["Node.js", "Express.js", "MongoDB", "Firebase Storage", "JWT", "Google OAuth", "RBAC", "Security"],
     github: "https://github.com/sreesaivardhan/SecureGov",
     live: "https://securegov.netlify.app",
@@ -173,8 +173,8 @@ export const projects = [
     title: "Semantic Search Engine",
     subtitle: "Cluster-Aware Semantic Search System",
     description:
-      "Cluster-aware semantic retrieval system leveraging FAISS vector search, GMM clustering, and intelligent caching for efficient paraphrase-aware document discovery.",
-    tags: ["FAISS", "NLP", "Semantic Search", "FastAPI", "Vector Search", "Information Retrieval"],
+      "Cluster-aware semantic retrieval system using Sentence Transformers embeddings, FAISS vector search, GMM clustering, TF-IDF keyword analysis, and semantic caching for efficient document retrieval.",
+    tags: ["FAISS", "Sentence Transformers", "NLP", "Semantic Search", "FastAPI", "Vector Search", "Information Retrieval"],
     github: "https://github.com/sreesaivardhan/semantic-search-system",
     category: "AI",
     highlight: null,
@@ -183,7 +183,7 @@ export const projects = [
     title: "ChatChime",
     subtitle: "Real-Time Chat App",
     description:
-      "Real-time multi-room communication platform built with Socket.IO featuring live messaging, typing indicators, presence tracking, and resilient WebSocket connectivity.",
+      "Real-time multi-room communication platform built with Node.js, Express.js, and Socket.IO featuring live messaging, typing indicators, presence tracking, room management, and in-memory state handling.",
     tags: ["Socket.IO", "WebSockets", "Node.js", "Express.js", "Real-Time", "Communication"],
     github: "https://github.com/sreesaivardhan/ChatChime",
     live: "https://chat-chimes.netlify.app",
@@ -194,8 +194,8 @@ export const projects = [
     title: "GreenVoice",
     subtitle: "Plant Health AI",
     description:
-      "ML-powered plant health prediction system using bioelectric and environmental sensor signals for early disease detection before visible symptoms appear.",
-    tags: ["Machine Learning", "IoT", "ESP32", "Signal Processing", "Predictive Analytics", "Agritech"],
+      "IoT-based plant health classification system using bioelectric and environmental sensor telemetry with a CNN-LSTM model for temporal signal analysis.",
+    tags: ["Machine Learning", "CNN-LSTM", "IoT", "ESP32", "Signal Processing", "Sensor Integration"],
     github: "https://github.com/R-J-N-1810/Green-Voice",
     category: "AI",
     highlight: "Top 10 — VIT-AP Engineering Clinics Expo",
@@ -204,8 +204,8 @@ export const projects = [
     title: "RxOCR",
     subtitle: "Multi-Domain Prescription OCR Prototype",
     description:
-      "Healthcare OCR system for digitizing handwritten prescriptions through confidence-aware extraction and domain-specific post-processing pipelines.",
-    tags: ["OCR", "EasyOCR", "Healthcare AI", "Document Processing", "Information Extraction", "Python"],
+      "Healthcare OCR system for digitizing handwritten prescriptions using multi-pass EasyOCR, confidence-weighted text merging, fuzzy drug matching, and domain-specific information extraction.",
+    tags: ["OCR", "EasyOCR", "OpenCV", "Healthcare AI", "Information Extraction", "RapidFuzz", "Python"],
     github: "https://github.com/sreesaivardhan/prescription-ocr-prototype",
     category: "AI",
     highlight: null,
@@ -214,8 +214,8 @@ export const projects = [
     title: "Gemini Pro Financial Decoder",
     subtitle: "GenAI Application",
     description:
-      "GenAI-powered financial document analysis platform utilizing Gemini Pro and a multimodal RAG pipeline for contextual insight generation and intelligent document understanding.",
-    tags: ["Gemini API", "RAG", "LLMs", "GenAI", "Streamlit", "Multimodal AI"],
+      "GenAI-powered financial analysis platform using Gemini 1.5 Flash, LangChain PromptTemplates, and Streamlit to interpret uploaded CSV and Excel financial statements.",
+    tags: ["Gemini API", "LangChain", "LLMs", "GenAI", "Streamlit", "Pandas", "Financial Analytics"],
     github: "https://github.com/sreesaivardhan/gemini-financial-decoder",
     category: "AI",
     highlight: null,
@@ -224,8 +224,8 @@ export const projects = [
     title: "Hybrid ML Fraud Detection",
     subtitle: "Machine Learning",
     description:
-      "Ensemble fraud detection system combining XGBoost, Random Forest, and Logistic Regression with SMOTE balancing for highly imbalanced transaction datasets.",
-    tags: ["XGBoost", "Random Forest", "Scikit-learn", "Fraud Detection", "SMOTE", "Feature Engineering"],
+      "Ensemble fraud detection pipeline combining Logistic Regression, Random Forest, and XGBoost with structured preprocessing and feature engineering for imbalanced transaction classification.",
+    tags: ["XGBoost", "Random Forest", "Logistic Regression", "Scikit-learn", "Fraud Detection", "Feature Engineering"],
     github: "https://github.com/sreesaivardhan/ML-FRAUD-DETECTION-PROJECT",
     category: "AI",
     highlight: null,
@@ -234,7 +234,7 @@ export const projects = [
     title: "LensLore",
     subtitle: "Photography Journal Platform",
     description:
-      "Metadata-driven photography platform featuring dynamic JSON-powered content rendering, editorial gallery experiences, collection discovery, theme persistence, and location-integrated visual storytelling.",
+      "Metadata-driven photography platform featuring JSON-powered content rendering, dynamic galleries, collection filtering, modal navigation, theme persistence, and responsive editorial storytelling.",
     tags: [
       "JavaScript", "HTML5", "CSS3", "JSON", "Responsive Design", "UI/UX", "Editorial Design", "Frontend"],
     github: "https://github.com/sreesaivardhan/virtual-gallery",

@@ -4,7 +4,7 @@ import { FaLinkedin } from 'react-icons/fa'
 import { HiMail, HiDownload, HiLocationMarker } from 'react-icons/hi'
 
 const RESUME_URL =
-  'https://drive.google.com/file/d/1s0HLk6gllwWTVubSWbzGserEtUYJPV3_/view?usp=drive_link'
+  'https://drive.google.com/file/d/1hEwkj-rag6DN9DpE_IR7pTrp1oik23re/view?usp=drive_link'
 
 export default function About() {
   return (
@@ -47,11 +47,11 @@ export default function About() {
             {/* Social links */}
             <div className="flex items-center flex-wrap md:flex-nowrap gap-4 md:gap-6">
               {[
-                { href: personalInfo.github,            Icon: SiGithub,   label: 'GitHub' },
-                { href: personalInfo.linkedin,          Icon: FaLinkedin, label: 'LinkedIn' },
-                { href: personalInfo.leetcode,          Icon: SiLeetcode, label: 'LeetCode' },
-                { href: `mailto:${personalInfo.email}`, Icon: HiMail,     label: 'Email' },
-                { href: RESUME_URL,                     Icon: HiDownload, label: 'Resume', external: true },
+                { href: personalInfo.github, Icon: SiGithub, label: 'GitHub' },
+                { href: personalInfo.linkedin, Icon: FaLinkedin, label: 'LinkedIn' },
+                { href: personalInfo.leetcode, Icon: SiLeetcode, label: 'LeetCode' },
+                { href: `mailto:${personalInfo.email}`, Icon: HiMail, label: 'Email' },
+                { href: RESUME_URL, Icon: HiDownload, label: 'Resume', external: true },
               ].map(({ href, Icon, label, external }) => (
                 <a
                   key={label}
