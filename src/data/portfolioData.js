@@ -8,7 +8,6 @@ export const personalInfo = {
   phone: "+91 8332839135",
   github: "https://github.com/sreesaivardhan",
   linkedin: "https://linkedin.com/in/saivardhan06",
-  leetcode: "https://leetcode.com/u/sreesaivardhanS",
   tagline:
     "Building scalable AI-powered applications using modern web technologies.",
 };

@@ -1,10 +1,9 @@
 import { personalInfo, education } from '../data/portfolioData'
-import { SiGithub, SiLeetcode } from 'react-icons/si'
+import { SiGithub} from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { HiMail, HiDownload, HiLocationMarker } from 'react-icons/hi'
 
-const RESUME_URL =
-  'https://drive.google.com/file/d/1hEwkj-rag6DN9DpE_IR7pTrp1oik23re/view?usp=drive_link'
+const RESUME_URL ='https://drive.google.com/file/d/1F2q7EDgy8HO26UkuDPGrEWJ9p7TEfFo7/view?usp=drive_link'
 
 export default function About() {
   return (
@@ -49,7 +48,6 @@ export default function About() {
               {[
                 { href: personalInfo.github, Icon: SiGithub, label: 'GitHub' },
                 { href: personalInfo.linkedin, Icon: FaLinkedin, label: 'LinkedIn' },
-                { href: personalInfo.leetcode, Icon: SiLeetcode, label: 'LeetCode' },
                 { href: `mailto:${personalInfo.email}`, Icon: HiMail, label: 'Email' },
                 { href: RESUME_URL, Icon: HiDownload, label: 'Resume', external: true },
               ].map(({ href, Icon, label, external }) => (
