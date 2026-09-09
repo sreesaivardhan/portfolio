@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { personalInfo } from '../data/portfolioData'
 
 const RESUME_URL =
-  'https://drive.google.com/file/d/1s0HLk6gllwWTVubSWbzGserEtUYJPV3_/view?usp=drive_link'
+  'https://drive.google.com/file/d/1F2q7EDgy8HO26UkuDPGrEWJ9p7TEfFo7/view?usp=drive_link'
 
 export default function Hero() {
   const roles = personalInfo.roles
