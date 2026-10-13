@@ -143,7 +143,7 @@ export const projects = [
     "Deployed adaptive learning platform featuring six interactive activities, behavioural telemetry, personalized task adaptation, BKT/HMM-based intelligence, voice analysis, and explainable AI.",
   tags: ["React", "TypeScript", "FastAPI", "PostgreSQL", "BKT", "HMM", "Voice AI", "XAI"],
   github: "https://github.com/saravanesh26/CapstoneProject",
-  live: "https://cognilearn.saravnesh.dev",
+  live: "https://cognilearn.saravanesh.dev",
   category: "Web",
   highlight: null,
   },
