@@ -137,6 +137,17 @@ export const projects = [
     highlight: null,
   },
   {
+  title: "CogniLearn",
+  subtitle: "Adaptive Learning Platform",
+  description:
+    "Deployed adaptive learning platform featuring six interactive activities, behavioural telemetry, personalized task adaptation, BKT/HMM-based intelligence, voice analysis, and explainable AI.",
+  tags: ["React", "TypeScript", "FastAPI", "PostgreSQL", "BKT", "HMM", "Voice AI", "XAI"],
+  github: "https://github.com/saravanesh26/CapstoneProject",
+  live: "https://cognilearn.saravnesh.dev",
+  category: "Web",
+  highlight: null,
+  },
+  {
     title: "MediCore",
     subtitle: "Healthcare Management Platform",
     description:
