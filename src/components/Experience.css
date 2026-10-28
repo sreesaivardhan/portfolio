@@ -1,0 +1,183 @@
+/* ─── Experience section ────────────────────────────────── */
+.exp-subtitle {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 8px 0 56px;
+}
+
+/* ─── Timeline wrapper ──────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+/* vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(34,211,238,0.4) 0%,
+    var(--border) 100%
+  );
+}
+
+/* ─── Timeline entry ────────────────────────────────────── */
+.timeline-entry {
+  position: relative;
+  margin-bottom: 48px;
+}
+.timeline-entry:last-child { margin-bottom: 0; }
+
+/* node on the line */
+.timeline-node {
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transform: translateX(-1px); /* centre on the 2px line */
+}
+
+/* incoming (Japan): filled aqua + pulse ring */
+.timeline-node.is-incoming {
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 0 var(--glow);
+  animation: nodePulse 2.4s ease-out infinite;
+}
+@keyframes nodePulse {
+  0%   { box-shadow: 0 0 0 0 var(--glow); }
+  60%  { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .timeline-node.is-incoming { animation: none; }
+}
+
+/* past: hollow circle */
+.timeline-node.is-past {
+  background: transparent;
+  border: 2px solid var(--muted);
+}
+
+/* ─── Card inside entry ─────────────────────────────────── */
+.exp-card {
+  padding: 28px;
+}
+@media (max-width: 639px) {
+  .exp-card { padding: 20px; }
+}
+
+/* header row */
+.exp-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.exp-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.exp-title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.exp-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+.exp-company {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+}
+.exp-period {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* incoming pill */
+.exp-status-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  background: rgba(34,211,238,0.12);
+  border: 1px solid rgba(34,211,238,0.35);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* summary paragraph */
+.exp-summary {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+/* bullet list */
+.exp-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.exp-bullets li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+/* aqua dash marker */
+.exp-bullets li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+/* linked app names in bullet 1 */
+.exp-app-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(139,149,165,0.4);
+  text-underline-offset: 3px;
+  transition: color .2s, text-decoration-color .2s;
+}
+.exp-app-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* stack chips */
+.exp-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

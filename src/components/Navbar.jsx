@@ -1,169 +1,246 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import './Navbar.css';
 
-const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Achievements', href: '#achievements' },
-  { label: 'Certifications', href: '#certifications' },
-  { label: 'Contact', href: '#contact' },
-]
+const NAV_LINKS = [
+  { label: 'projects',   hash: '#projects'   },
+  { label: 'experience', hash: '#experience' },
+  { label: 'highlights', hash: '#highlights' },
+  { label: 'contact',    hash: '#contact'    },
+];
 
-const sectionIds = links.map(l => l.href.slice(1))
+const SECTION_IDS = NAV_LINKS.map(l => l.hash.slice(1));
 
-/* SVG icon components — avoids emoji rendering differences across devices */
-function HamburgerIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-      <rect y="4" width="22" height="2" rx="1" fill="currentColor" />
-      <rect y="10" width="22" height="2" rx="1" fill="currentColor" />
-      <rect y="16" width="22" height="2" rx="1" fill="currentColor" />
-    </svg>
-  )
-}
-
-function CloseIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  )
+/* ─── Highlight geometry helper ─────────────────────────────── */
+function getHighlight(el) {
+  if (!el) return null;
+  return { left: el.offsetLeft, width: el.offsetWidth };
 }
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
+  const location  = useLocation();
+  const navigate  = useNavigate();
 
-  // Scroll shadow
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const [activeId,   setActiveId]   = useState('');
+  const [hoverEl,    setHoverEl]    = useState(null); // DOM el being hovered
+  const [highlight,  setHighlight]  = useState(null); // {left,width}
+  const [menuOpen,   setMenuOpen]   = useState(false);
+  const [dropTop,    setDropTop]    = useState(64);   // px from top
 
-  // Active section via IntersectionObserver
+  const pillRef    = useRef(null);
+  const linksRef   = useRef(null);
+  const linkEls    = useRef({});     // hash → <button> DOM node
+  const dropRef    = useRef(null);
+  const firstLinkRef = useRef(null);
+
+  /* ── Active section via IntersectionObserver ─────────────── */
   useEffect(() => {
-    const observers = []
-    sectionIds.forEach(id => {
-      const el = document.getElementById(id)
-      if (!el) return
+    if (location.pathname !== '/') { setActiveId(''); return; }
+    const observers = [];
+    SECTION_IDS.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
       const obs = new IntersectionObserver(
-        ([entry]) => { if (entry.isIntersecting) setActiveSection(id) },
+        ([entry]) => { if (entry.isIntersecting) setActiveId(id); },
         { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
-      )
-      obs.observe(el)
-      observers.push(obs)
-    })
-    return () => observers.forEach(o => o.disconnect())
-  }, [])
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach(o => o.disconnect());
+  }, [location.pathname]);
 
-  // Lock body scroll when mobile menu is open
+  /* ── Slide highlight position ────────────────────────────── */
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [open])
+    const source = hoverEl ?? linkEls.current['#' + activeId] ?? null;
+    // Only show the highlight if hovering OR a section is genuinely active
+    const show = source && (hoverEl !== null || activeId !== '');
+    if (!show) {
+      setHighlight(h => h ? { ...h, opacity: 0 } : null);
+      return;
+    }
+    setHighlight({ left: source.offsetLeft, width: source.offsetWidth, opacity: 1 });
+  }, [hoverEl, activeId]);
+
+  /* Recalculate on resize */
+  useEffect(() => {
+    const recalc = () => {
+      const source = hoverEl ?? linkEls.current['#' + activeId] ?? null;
+      const show = source && (hoverEl !== null || activeId !== '');
+      if (source && linksRef.current && show)
+        setHighlight({ left: source.offsetLeft, width: source.offsetWidth, opacity: 1 });
+    };
+    window.addEventListener('resize', recalc);
+    return () => window.removeEventListener('resize', recalc);
+  }, [hoverEl, activeId]);
+
+  /* ── Mobile: compute dropdown top from pill bottom ───────── */
+  useEffect(() => {
+    const updateTop = () => {
+      if (pillRef.current) {
+        const { bottom } = pillRef.current.getBoundingClientRect();
+        setDropTop(bottom + 8);
+      }
+    };
+    updateTop();
+    window.addEventListener('resize', updateTop);
+    return () => window.removeEventListener('resize', updateTop);
+  }, []);
+
+  /* ── Close mobile menu on route change or resize ─────────── */
+  useEffect(() => { setMenuOpen(false); }, [location]);
+  useEffect(() => {
+    const onResize = () => { if (window.innerWidth >= 780) setMenuOpen(false); };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  /* ── Close on Escape ─────────────────────────────────────── */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e) => { if (e.key === 'Escape') setMenuOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [menuOpen]);
+
+  /* ── Close on outside tap ────────────────────────────────── */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onPointer = (e) => {
+      if (
+        pillRef.current && !pillRef.current.contains(e.target) &&
+        dropRef.current  && !dropRef.current.contains(e.target)
+      ) setMenuOpen(false);
+    };
+    document.addEventListener('pointerdown', onPointer);
+    return () => document.removeEventListener('pointerdown', onPointer);
+  }, [menuOpen]);
+
+  /* ── Move focus to first dropdown link when it opens ─────── */
+  useEffect(() => {
+    if (menuOpen && firstLinkRef.current) firstLinkRef.current.focus();
+  }, [menuOpen]);
+
+  /* ── Navigation handler (works on every route) ──────────── */
+  const handleNavClick = useCallback((hash, e) => {
+    e?.preventDefault();
+    const id = hash.slice(1);
+    if (location.pathname === '/') {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        history.replaceState(null, '', hash);
+      }
+    } else {
+      navigate('/' + hash);
+    }
+    setMenuOpen(false);
+  }, [location.pathname, navigate]);
+
+  /* ── Brand click: scroll to top or navigate home ─────────── */
+  const handleBrand = useCallback((e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '/');
+    } else {
+      navigate('/');
+    }
+  }, [location.pathname, navigate]);
+
+  const isHome = location.pathname === '/';
 
   return (
     <>
-      <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || open ? 'backdrop-blur-md shadow-lg' : 'bg-transparent'
-          }`}
-        style={(scrolled || open) ? { background: 'rgba(34,40,49,0.97)' } : {}}
-      >
-        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      {/* Skip link — first focusable element on the page */}
+      <a href="#main" className="skip-link">skip to content</a>
 
-          {/* Logo */}
-          <a
-            href="#hero"
-            className="font-bold text-xl tracking-tight"
-            style={{ color: '#00ADB5' }}
-            onClick={() => setOpen(false)}
-          >
-            SSV
-          </a>
+      <header>
+        <nav aria-label="primary">
+          {/* ── Floating pill ──────────────────────────────── */}
+          <div className="nav-wrapper" ref={pillRef}>
 
-          {/* Desktop nav links */}
-          <div className="hidden md:flex gap-8">
-            {links.map(l => {
-              const isActive = activeSection === l.href.slice(1)
-              return (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  className="text-sm font-medium transition-all duration-200 pb-0.5"
+            {/* Brand */}
+            <a
+              href="/"
+              className="nav-brand"
+              onClick={handleBrand}
+              aria-label="scroll to top"
+            >
+              sv<span>.</span>
+            </a>
+
+            {/* Desktop links */}
+            <div className="nav-links" ref={linksRef}>
+              {/* Sliding highlight */}
+              {highlight && (
+                <span
+                  className="nav-highlight"
+                  aria-hidden="true"
                   style={{
-                    color: isActive ? '#00ADB5' : '#CFCFCF',
-                    borderBottom: isActive ? '1.5px solid #00ADB5' : '1.5px solid transparent',
+                    width:   highlight.width + 'px',
+                    transform: `translateX(${highlight.left}px)`,
+                    opacity: highlight.opacity,
                   }}
-                  onMouseEnter={e => { if (!isActive) e.currentTarget.style.color = '#00ADB5' }}
-                  onMouseLeave={e => { if (!isActive) e.currentTarget.style.color = '#CFCFCF' }}
-                >
-                  {l.label}
-                </a>
-              )
-            })}
+                />
+              )}
+
+              {NAV_LINKS.map(({ label, hash }) => {
+                const id = hash.slice(1);
+                const isActive = isHome && activeId === id;
+                return (
+                  <button
+                    key={hash}
+                    ref={el => { linkEls.current[hash] = el; }}
+                    className={'nav-link' + (isActive ? ' is-active' : '')}
+                    onClick={e => handleNavClick(hash, e)}
+                    onMouseEnter={e => setHoverEl(e.currentTarget)}
+                    onMouseLeave={() => setHoverEl(null)}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Mobile menu toggle */}
+            <button
+              className="nav-menu-btn"
+              aria-label={menuOpen ? 'close menu' : 'open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="nav-dropdown"
+              onClick={() => setMenuOpen(o => !o)}
+            >
+              {menuOpen ? 'close' : 'menu'}
+            </button>
           </div>
 
-          {/* Mobile hamburger/close button */}
-          <button
-            className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg transition-colors duration-200"
-            style={{ color: '#CFCFCF' }}
-            onClick={() => setOpen(prev => !prev)}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            aria-expanded={open}
+          {/* ── Mobile dropdown ────────────────────────────── */}
+          <div
+            id="nav-dropdown"
+            ref={dropRef}
+            className={'nav-dropdown' + (menuOpen ? ' is-open' : '')}
+            style={{ top: dropTop + 'px' }}
+            aria-hidden={!menuOpen}
           >
-            {open ? <CloseIcon /> : <HamburgerIcon />}
-          </button>
-
-        </div>
-      </nav>
-
-      {/* Mobile full-screen menu overlay */}
-      <div
-        className="fixed inset-0 z-40 md:hidden flex flex-col transition-all duration-300"
-        style={{
-          background: 'rgba(34,40,49,0.98)',
-          backdropFilter: 'blur(12px)',
-          opacity: open ? 1 : 0,
-          pointerEvents: open ? 'auto' : 'none',
-          paddingTop: '72px', // clears the navbar bar
-        }}
-        aria-hidden={!open}
-      >
-        {/* Divider under navbar */}
-        <div style={{ height: '1px', background: 'rgba(255,255,255,0.08)', marginBottom: '8px' }} />
-
-        <nav className="flex flex-col px-6 pt-4 pb-10 overflow-y-auto flex-1">
-          {links.map((l, idx) => {
-            const isActive = activeSection === l.href.slice(1)
-            return (
-              <a
-                key={l.label}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="flex items-center justify-between py-4 font-medium text-base transition-colors duration-200"
-                style={{
-                  color: isActive ? '#00ADB5' : '#F5F5F5',
-                  borderBottom: idx < links.length - 1
-                    ? '1px solid rgba(255,255,255,0.06)'
-                    : 'none',
-                }}
-              >
-                <span>{l.label}</span>
-                {/* Active indicator chevron */}
-                {isActive && (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M6 3l5 5-5 5" stroke="#00ADB5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </a>
-            )
-          })}
+            {NAV_LINKS.map(({ label, hash }, i) => {
+              const id = hash.slice(1);
+              const isActive = isHome && activeId === id;
+              return (
+                <button
+                  key={hash}
+                  ref={i === 0 ? firstLinkRef : undefined}
+                  className={'nav-dropdown-link' + (isActive ? ' is-active' : '')}
+                  onClick={e => handleNavClick(hash, e)}
+                  tabIndex={menuOpen ? 0 : -1}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
         </nav>
-      </div>
+      </header>
     </>
-  )
+  );
 }

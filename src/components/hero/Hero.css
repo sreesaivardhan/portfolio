@@ -1,0 +1,471 @@
+/* ─── Hero layout ───────────────────────────────────────── */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 120px;
+  padding-bottom: 64px;
+}
+
+@media (min-width: 1024px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    gap: 40px;
+  }
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .hero-left {
+    flex: 0 0 52%;
+  }
+
+  .hero-right {
+    flex: 0 0 48%;
+  }
+}
+
+/* ─── Headline ──────────────────────────────────────────── */
+.hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(44px, 7.4vw, 92px);
+  line-height: .95;
+  letter-spacing: .01em;
+  margin: 0;
+  color: var(--text);
+}
+
+/* reuse section-title em rule for the accent word */
+.hero-h1 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--accent);
+  letter-spacing: 0;
+}
+
+/* ─── Subline ───────────────────────────────────────────── */
+.hero-sub {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 46ch;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── Avatar + bubble ──────────────────────────────────── */
+:root {
+  --avatar-size: 128px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --avatar-size: 168px;
+  }
+}
+
+.avatar-wrap {
+  position: relative;
+  width: var(--avatar-size);
+}
+
+.avatar-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  border-radius: 28px;
+  transition: transform .25s cubic-bezier(.34, 1.56, .64, 1), box-shadow .25s, border-color .25s;
+}
+
+.avatar-btn img {
+  display: block;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: border-color .25s;
+  /*
+    When cutout PNG arrives:
+    - switch to object-fit: contain
+    - remove border and background
+    - add: filter: drop-shadow(0 0 24px var(--glow))
+  */
+}
+
+.avatar-wrap.is-open .avatar-btn,
+.avatar-btn:focus-visible {
+  outline: none;
+  transform: translateY(-3px) rotate(-1deg);
+  box-shadow: 0 0 48px -10px var(--glow);
+}
+
+.avatar-wrap.is-open .avatar-btn img,
+.avatar-btn:focus-visible img {
+  border-color: rgba(34, 211, 238, 0.55);
+}
+
+/* ─── Bubble ────────────────────────────────────────────── */
+.bubble {
+  /* position, top, left, opacity, transform, pointer-events
+     are all set via inline style in AvatarBubble.jsx */
+  background: #F4F7FA;
+  color: #07090B;
+  border: 2px solid #07090B;
+  border-radius: 18px;
+  box-shadow: 4px 4px 0 var(--accent);
+  padding: 10px 16px;
+  white-space: normal;
+  max-width: min(260px, calc(100vw - 2 * var(--gutter) - 16px));
+  transition: opacity .28s cubic-bezier(.34, 1.56, .64, 1),
+    transform .28s cubic-bezier(.34, 1.56, .64, 1);
+  z-index: 200;
+}
+
+/* comic-book tail: rotated square at bottom-left of bubble */
+.bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 14px;
+  width: 12px;
+  height: 12px;
+  background: #F4F7FA;
+  border-right: 2px solid #07090B;
+  border-bottom: 2px solid #07090B;
+  transform: rotate(45deg);
+  box-shadow: 2px 2px 0 var(--accent);
+}
+
+/* bubble open state: handled via inline style in AvatarBubble.jsx */
+.avatar-wrap.is-open .bubble {
+  pointer-events: auto;
+}
+
+/* ─── Glitch text ───────────────────────────────────────── */
+.glitch {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1;
+  color: #07090B;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.is-glitching .glitch::before {
+  color: var(--accent-2);
+  opacity: 1;
+  animation: glitchTop .6s steps(2, end) 1;
+}
+
+.is-glitching .glitch::after {
+  color: var(--accent);
+  opacity: 1;
+  animation: glitchBottom .6s steps(2, end) 1;
+}
+
+@keyframes glitchTop {
+  0% {
+    clip-path: inset(0 0 70% 0);
+    transform: translate(-3px, 0);
+  }
+
+  20% {
+    clip-path: inset(30% 0 40% 0);
+    transform: translate(3px, 0);
+  }
+
+  40% {
+    clip-path: inset(10% 0 60% 0);
+    transform: translate(-2px, 0);
+  }
+
+  60% {
+    clip-path: inset(55% 0 10% 0);
+    transform: translate(2px, 0);
+  }
+
+  80% {
+    clip-path: inset(20% 0 55% 0);
+    transform: translate(-3px, 0);
+  }
+
+  100% {
+    clip-path: inset(0 0 100% 0);
+    transform: none;
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    clip-path: inset(60% 0 0 0);
+    transform: translate(3px, 0);
+  }
+
+  25% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-3px, 0);
+  }
+
+  50% {
+    clip-path: inset(75% 0 5% 0);
+    transform: translate(2px, 0);
+  }
+
+  75% {
+    clip-path: inset(35% 0 45% 0);
+    transform: translate(-2px, 0);
+  }
+
+  100% {
+    clip-path: inset(100% 0 0 0);
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .is-glitching .glitch::before,
+  .is-glitching .glitch::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  .avatar-btn {
+    transition: none;
+  }
+
+  .bubble {
+    transition: none;
+  }
+}
+
+/* ─── Icon row ──────────────────────────────────────────── */
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.icon-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 20px;
+  transition: color .2s, border-color .2s, transform .2s;
+}
+
+.icon-link:hover {
+  color: var(--accent);
+  border-color: rgba(34, 211, 238, 0.55);
+  transform: translateY(-2px);
+}
+
+/* tooltip */
+.icon-link::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font: 500 11px var(--font-body);
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .15s;
+}
+
+.icon-link:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 779px) {
+  .icon-link::after {
+    display: none;
+  }
+}
+
+/* ─── Code editor ───────────────────────────────────────── */
+.editor-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  /* No hover glow on this card */
+  transition: none;
+  max-width: 560px;
+  width: 100%;
+}
+
+/* override the global .card hover */
+.editor-card:hover {
+  border-color: var(--border);
+  box-shadow: none;
+  transform: none;
+}
+
+.editor-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.editor-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.editor-dot:nth-child(1) {
+  background: #FF5F57;
+}
+
+.editor-dot:nth-child(2) {
+  background: #FFBD2E;
+}
+
+.editor-dot:nth-child(3) {
+  background: #28C840;
+}
+
+.editor-tab {
+  margin-left: 8px;
+  font: 500 12px var(--font-mono);
+  color: var(--muted);
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--accent);
+}
+
+.editor-body {
+  display: flex;
+  padding: 16px 0 20px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 200px;
+  /* reserve space to prevent jump */
+}
+
+@media (min-width: 768px) {
+  .editor-body {
+    font-size: 14px;
+  }
+}
+
+.editor-gutter {
+  flex-shrink: 0;
+  width: 36px;
+  text-align: right;
+  padding: 0 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  user-select: none;
+  line-height: 1.7;
+}
+
+.editor-content {
+  flex: 1;
+  padding: 0 16px 0 0;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-width: 0;
+}
+
+/* editor status lines */
+.editor-status-label {
+  color: var(--accent);
+}
+
+/* blinking cursor */
+@keyframes cursorBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.editor-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editor-cursor {
+    animation: none;
+  }
+}
+
+/* invisible full-text layer to reserve height */
+.editor-ghost {
+  visibility: hidden;
+  position: absolute;
+  inset: 0;
+  /* fill parent — prevents width overflow */
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .editor-ghost {
+    font-size: 14px;
+  }
+}

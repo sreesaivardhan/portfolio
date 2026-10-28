@@ -1,44 +1,133 @@
-import { experience } from '../data/portfolioData'
+import { experience } from '../data/experience';
+import Reveal from './Reveal';
+import './Experience.css';
 
+/* ── App name links in bullet 0 of Unified Mentor ───────── */
+const APP_LINKS = [
+  { name: 'SecureGov',  href: 'https://securegov.netlify.app'                 },
+  { name: 'MediCore',   href: 'https://mediicore.netlify.app'                  },
+  { name: 'ChatChime',  href: 'https://chat-chimes.netlify.app'                },
+  { name: 'LensLore',   href: 'https://virtual-gallery-gamma-woad.vercel.app'  },
+];
+
+/**
+ * Split a bullet string on known app names and replace each match with
+ * a React link element. Returns an array of strings and elements.
+ */
+function linkifyBullet(text) {
+  // Build a regex from the app names in order of appearance
+  const pattern = new RegExp(`(${APP_LINKS.map(a => a.name).join('|')})`, 'g');
+  const parts = text.split(pattern);
+  return parts.map((part, i) => {
+    const app = APP_LINKS.find(a => a.name === part);
+    if (app) {
+      return (
+        <a
+          key={i}
+          href={app.href}
+          className="exp-app-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
+/* ── Single timeline card ────────────────────────────────── */
+function ExperienceCard({ entry, delay }) {
+  const isIncoming = entry.status === 'incoming';
+
+  return (
+    <div className="timeline-entry">
+      {/* Timeline node */}
+      <span
+        className={'timeline-node ' + (isIncoming ? 'is-incoming' : 'is-past')}
+        aria-hidden="true"
+      />
+
+      <Reveal delay={delay}>
+        <article className="exp-card card" aria-label={`${entry.title} at ${entry.company}`}>
+
+          {/* ── Header ──────────────────────────────────── */}
+          <header className="exp-header">
+            <div className="exp-header-left">
+              <div className="exp-title-row">
+                <h3 className="exp-title">{entry.title}</h3>
+                {isIncoming && (
+                  <span className="exp-status-tag">incoming</span>
+                )}
+              </div>
+              <p className="exp-company">
+                {entry.company} · {entry.location}
+              </p>
+            </div>
+            <time className="exp-period">{entry.period}</time>
+          </header>
+
+          {/* ── Summary (if non-empty) ───────────────────── */}
+          {entry.summary && (
+            <p className="exp-summary">{entry.summary}</p>
+          )}
+
+          {/* ── Bullets (if non-empty) ───────────────────── */}
+          {entry.bullets.length > 0 && (
+            <ul className="exp-bullets">
+              {entry.bullets.map((bullet, bi) => (
+                <li key={bi}>
+                  {/* Only linkify the first bullet of unified-mentor */}
+                  {entry.id === 'unified-mentor' && bi === 0
+                    ? linkifyBullet(bullet)
+                    : bullet
+                  }
+                </li>
+              ))}
+            </ul>
+          )}
+
+          {/* ── Stack chips (if non-empty) ───────────────── */}
+          {entry.stack.length > 0 && (
+            <div className="exp-stack">
+              {entry.stack.map(tech => (
+                <span key={tech} className="chip">{tech}</span>
+              ))}
+            </div>
+          )}
+
+        </article>
+      </Reveal>
+    </div>
+  );
+}
+
+/* ── Section ─────────────────────────────────────────────── */
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 px-5 md:py-32 md:px-6" style={{ background: '#222831' }}>
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2" style={{ color: '#F5F5F5' }}>Experience</h2>
-        <div className="w-16 h-1 mb-14" style={{ background: '#00ADB5' }} />
+    <div className="container">
+      <Reveal>
+        <h2 className="section-title">
+          The <em>story</em> so far
+        </h2>
+      </Reveal>
 
-        <div className="space-y-8">
-          {experience.map((job, i) => (
-            <div
-              key={i}
-              className="rounded-2xl p-6 md:p-10 transition-colors duration-200"
-              style={{ background: '#393E46', border: '1px solid rgba(255,255,255,0.08)' }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(0,173,181,0.35)'}
-              onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
-            >
-              <div className="flex flex-wrap justify-between items-start mb-7">
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold" style={{ color: '#F5F5F5' }}>{job.title}</h3>
-                  <p className="text-sm md:text-base font-semibold mt-1.5" style={{ color: '#00ADB5' }}>{job.company}</p>
-                </div>
-                <div className="text-right mt-2 md:mt-0">
-                  <p className="text-xs md:text-sm" style={{ color: '#9CA3AF' }}>{job.duration}</p>
-                  <p className="text-xs md:text-sm mt-1" style={{ color: '#9CA3AF' }}>{job.type}</p>
-                </div>
-              </div>
+      <Reveal delay={60}>
+        <p className="exp-subtitle">
+          where i have worked, and where i am headed.
+        </p>
+      </Reveal>
 
-              <ul className="space-y-3">
-                {job.points.map((pt, j) => (
-                  <li key={j} className="flex gap-3 text-sm leading-relaxed" style={{ color: '#CFCFCF' }}>
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#00ADB5' }}>▸</span>
-                    {pt}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+      <div className="timeline">
+        {experience.map((entry, i) => (
+          <ExperienceCard
+            key={entry.id}
+            entry={entry}
+            delay={i * 120}
+          />
+        ))}
       </div>
-    </section>
-  )
+    </div>
+  );
 }

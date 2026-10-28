@@ -1,350 +1,227 @@
-// src/data/portfolioData.js
-
-export const personalInfo = {
-  name: "Sirasanagandla Sree Sai Vardhan",
-  shortName: "Sree Sai Vardhan",
-  roles: ["AI Engineer", "Full Stack Developer", "ML Enthusiast"],
-  email: "sreesaivardhans@gmail.com",
-  phone: "+91 8332839135",
-  github: "https://github.com/sreesaivardhan",
-  linkedin: "https://linkedin.com/in/saivardhan06",
-  tagline:
-    "Building scalable AI-powered applications using modern web technologies.",
-};
-
-export const education = {
-  degree: "B.Tech in Computer Science and Engineering (AIML)",
-  university: "VIT-AP University",
-  graduation: "June 2027",
-  coursework: [
-    "Data Structures & Algorithms",
-    "Operating Systems",
-    "Computer Networks",
-    "Database Systems",
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Deep Learning",
-    "Cloud Computing",
-  ],
-};
-
-export const skills = {
-  "Programming": [
-    "Python",
-    "Java",
-    "C++",
-    "JavaScript",
-    "TypeScript",
-    "SQL"
-  ],
-
-  "AI / ML": [
-    "PyTorch",
-    "TensorFlow",
-    "Scikit-learn",
-    "Transformers",
-    "OpenCV",
-    "GenAI",
-    "Gemini API",
-    "Streamlit",
-    "XGBoost",
-    "Computer Vision",
-    "FAISS"
-  ],
-
-  "Web & Backend": [
-    "React.js",
-    "Node.js",
-    "Express.js",
-    "REST APIs",
-    "Socket.IO",
-    "WebSockets",
-    "FastAPI"
-  ],
-
-  "Cloud & Databases": [
-    "AWS",
-    "Google Cloud",
-    "Firebase",
-    "PostgreSQL",
-    "MongoDB",
-    "MySQL",
-    "Prisma"
-  ],
-
-  "Developer Tools": [
-    "Git",
-    "GitHub",
-    "Docker",
-    "VS Code",
-    "Jupyter",
-    "Postman"
-  ],
-
-  "IoT & Embedded": [
-    "ESP32",
-    "Arduino",
-    "Sensor Integration"
-  ]
-};
-
-export const experience = [
-  {
-    title: "Web Development Intern",
-    company: "Unified Mentor",
-    duration: "June 2025 – September 2025",
-    type: "Remote",
-    points: [
-      "Developed and deployed web applications across document management, healthcare, real-time communication, and interactive web domains.",
-      "Implemented authentication, RBAC, REST APIs, WebSocket features, cloud integrations, and responsive frontend experiences using JavaScript, Node.js, Express.js, Firebase, and MongoDB.",
-      "Worked across multiple application architectures including REST-based backends, Firebase-powered services, real-time Socket.IO communication, and static JSON-driven frontend systems.",
-      "Delivered secure document management, healthcare scheduling, real-time communication, and dynamic photography applications during the internship.",
-    ],
-  },
-];
+﻿// src/data/portfolioData.js
+//
+// Project data only. Everything else moved out:
+//   experience       -> src/data/experience.js
+//   highlights/certs -> src/data/highlights.js
+//   contact/social   -> src/data/siteConfig.js
+//   skills strip     -> src/data/skills.js
+//
+// Field names are unchanged, so ProjectCard / ProjectsArchive need no edits.
+// Card rules: description fits 3 lines on featured cards (4 on archive),
+// tags are ordered best-first (featured shows 5, archive shows 4).
+//
+// To add a screenshot later, add an `image` field, for example:
+//   image: "/images/projects/nextask.png"
 
 export const projects = [
+  // ---------------------------------------------------------------- featured
   {
+    slug: "nextask",
+    featured: true,
     title: "NexTask",
-    subtitle: "AI-Powered Collaborative Kanban Platform",
+    subtitle: "AI-Powered Collaborative Kanban",
+    image: "/images/projects/NexTask.png",
     description:
-      "Production-ready collaborative Kanban platform with real-time task synchronization, AI-assisted task complexity estimation, GitHub issue import, Chrome extension, optimistic concurrency control, and PostgreSQL-backed authentication.",
-    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Socket.IO", "OAuth", "AI"],
+      "A Kanban board where teams stay in sync in real time. Built with optimistic concurrency control, AI task-complexity estimates, GitHub issue import and a Chrome extension.",
+    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Socket.IO"],
     github: "https://github.com/sreesaivardhan/nextask",
     live: "https://nextask-flame.vercel.app",
     category: "Web",
     highlight: null,
   },
   {
-    title: "SkillSync",
-    subtitle: "Skill Exchange & Collaboration Platform",
+    slug: "semantic-search-engine",
+    featured: true,
+    title: "Semantic Search Engine",
+    subtitle: "Cluster-Aware Semantic Search",
+    image: "/images/projects/sse.png",
     description:
-      "Full-stack MERN collaboration platform enabling peer-to-peer skill exchange with real-time matchmaking, messaging, collaborative notes, GitHub skill import, reputation tracking, and a credit-based session system.",
-    tags: ["MERN", "React.js", "Node.js", "MongoDB", "Socket.IO", "JWT", "Google OAuth", "Real-Time", "Analytics"],
+      "Finds documents by meaning instead of keywords. Embeds text with Sentence Transformers, searches with FAISS, groups results using GMM clustering and caches similar queries.",
+    tags: ["FAISS", "Sentence Transformers", "FastAPI", "GMM", "NLP"],
+    github: "https://github.com/sreesaivardhan/semantic-search-system",
+    category: "AI",
+    highlight: null,
+  },
+  {
+    slug: "skillsync",
+    featured: true,
+    title: "SkillSync",
+    subtitle: "Skill Exchange Platform",
+    image: "/images/projects/SkillSync.png",
+    description:
+      "A peer-to-peer skill exchange with real-time matchmaking. Includes messaging, shared notes, GitHub skill import, reputation tracking and a credit-based session system.",
+    tags: ["React", "Node.js", "MongoDB", "Socket.IO", "JWT"],
     github: "https://github.com/sreesaivardhan/skillsync",
     live: "https://skillsync-nine-mauve.vercel.app",
     category: "Web",
     highlight: null,
   },
   {
+    slug: "retinal-disease-detection",
+    featured: true,
     title: "Retinal Disease Detection",
     subtitle: "Medical AI",
+    image: "/images/projects/rdd.png",
     description:
-      "Deep learning-based retinal disease classification system using a custom dual-branch ConvNeXt-V2 and Swin-inspired attention architecture trained on the APTOS 2019 dataset.",
-    tags: ["PyTorch", "TensorFlow", "ConvNeXt-V2", "Swin-inspired Attention", "Computer Vision", "Medical AI"],
+      "Classifies retinal disease from fundus images. A custom dual-branch network that combines ConvNeXt-V2 with Swin-inspired attention, trained on the APTOS 2019 dataset.",
+    tags: ["PyTorch", "ConvNeXt-V2", "Swin-inspired Attention", "Computer Vision", "Medical AI"],
     github: "https://github.com/sreesaivardhan/Retinal_Disease_Detection",
     category: "AI",
     highlight: null,
   },
   {
-  title: "CogniLearn",
-  subtitle: "Adaptive Learning Platform",
-  description:
-    "Deployed adaptive learning platform featuring six interactive activities, behavioural telemetry, personalized task adaptation, BKT/HMM-based intelligence, voice analysis, and explainable AI.",
-  tags: ["React", "TypeScript", "FastAPI", "PostgreSQL", "BKT", "HMM", "Voice AI", "XAI"],
-  github: "https://github.com/saravanesh26/CapstoneProject",
-  live: "https://cognilearn.saravanesh.dev",
-  category: "Web",
-  highlight: null,
-  },
-  {
+    slug: "medicore",
+    featured: true,
     title: "MediCore",
-    subtitle: "Healthcare Management Platform",
+    subtitle: "Healthcare Platform",
+    image: "/images/projects/MediCore.png",
     description:
-      "Full-stack healthcare management platform supporting appointment booking, doctor workflows, operation theater scheduling, Razorpay payments, and role-based dashboards with Firebase-powered real-time updates.",
-    tags: ["Firebase", "Firestore", "Cloud Functions", "Razorpay", "RBAC", "Authentication", "Real-Time", "Healthcare"],
+      "Appointment booking and operation theater scheduling in one platform. Role-based dashboards, Razorpay payments and Firebase Cloud Functions with real-time updates.",
+    tags: ["Firebase", "Firestore", "Cloud Functions", "Razorpay", "RBAC"],
     github: "https://github.com/sreesaivardhan/hospital-operation-scheduler",
     live: "https://mediicore.netlify.app",
     category: "Web",
     highlight: null,
   },
   {
+    slug: "greenvoice",
+    featured: true,
+    title: "GreenVoice",
+    subtitle: "Plant Health AI",
+    image: "/images/projects/greenvoice.png",
+    description:
+      "Reads plant health from bioelectric signals. ESP32 sensors feed bioelectric and environmental data into a CNN-LSTM that classifies health over time.",
+    tags: ["ESP32", "CNN-LSTM", "IoT", "Signal Processing", "Machine Learning"],
+    github: "https://github.com/R-J-N-1810/Green-Voice",
+    category: "AI",
+    highlight: null,
+  },
+
+  // ----------------------------------------------------------------- archive
+  {
+    slug: "cognilearn",
+    featured: false,
+    title: "CogniLearn",
+    subtitle: "Adaptive Learning Platform",
+    description:
+      "A learning platform that adapts tasks to each learner. Six interactive activities, behavioural telemetry, BKT/HMM knowledge tracing, voice analysis and explainable AI.",
+    tags: ["React", "FastAPI", "BKT / HMM", "Explainable AI"],
+    github: "https://github.com/saravanesh26/CapstoneProject",
+    live: "https://cognilearn.saravanesh.dev",
+    category: "Web",
+    highlight: null,
+  },
+  {
+    slug: "swarm",
+    featured: false,
     title: "SWARM",
     subtitle: "Multi-Agent Reinforcement Learning",
     description:
-      "Multi-agent reinforcement learning prototype for warehouse coordination using Gymnasium and RWARE, with Actor-Critic policy learning, reward shaping, and benchmark evaluation.",
-    tags: ["Reinforcement Learning", "Actor-Critic", "REINFORCE", "Multi-Agent Systems", "Gymnasium", "Python"],
+      "Multi-agent RL for warehouse robot coordination. Actor-Critic policy learning with reward shaping on Gymnasium and RWARE, plus benchmark evaluation.",
+    tags: ["Reinforcement Learning", "Actor-Critic", "Gymnasium", "Python"],
     github: "https://github.com/sreesaivardhan/SWARM-HMARL",
     category: "AI",
     highlight: null,
   },
   {
+    slug: "securegov",
+    featured: false,
     title: "SecureGov",
     subtitle: "Document Management",
     description:
-      "Secure document management platform featuring Firebase authentication, JWT-protected Express APIs, MongoDB metadata storage, Firebase Storage, family-based sharing, and access-controlled workflows.",
-    tags: ["Node.js", "Express.js", "MongoDB", "Firebase Storage", "JWT", "Google OAuth", "RBAC", "Security"],
+      "Secure document storage with family-based sharing. Firebase auth, JWT-protected Express APIs, MongoDB metadata and Firebase Storage behind access-controlled workflows.",
+    tags: ["Node.js", "Express.js", "MongoDB", "JWT"],
     github: "https://github.com/sreesaivardhan/SecureGov",
     live: "https://securegov.netlify.app",
     category: "Web",
     highlight: null,
   },
   {
-    title: "Semantic Search Engine",
-    subtitle: "Cluster-Aware Semantic Search System",
-    description:
-      "Cluster-aware semantic retrieval system using Sentence Transformers embeddings, FAISS vector search, GMM clustering, TF-IDF keyword analysis, and semantic caching for efficient document retrieval.",
-    tags: ["FAISS", "Sentence Transformers", "NLP", "Semantic Search", "FastAPI", "Vector Search", "Information Retrieval"],
-    github: "https://github.com/sreesaivardhan/semantic-search-system",
-    category: "AI",
-    highlight: null,
-  },
-  {
+    slug: "chatchime",
+    featured: false,
     title: "ChatChime",
-    subtitle: "Real-Time Chat App",
+    subtitle: "Real-Time Chat",
     description:
-      "Real-time multi-room communication platform built with Node.js, Express.js, and Socket.IO featuring live messaging, typing indicators, presence tracking, room management, and in-memory state handling.",
-    tags: ["Socket.IO", "WebSockets", "Node.js", "Express.js", "Real-Time", "Communication"],
+      "Multi-room chat built on Socket.IO. Live messaging, typing indicators, presence tracking and room management with in-memory state.",
+    tags: ["Socket.IO", "Node.js", "Express.js", "WebSockets"],
     github: "https://github.com/sreesaivardhan/ChatChime",
     live: "https://chat-chimes.netlify.app",
     category: "Web",
     highlight: null,
   },
   {
-    title: "GreenVoice",
-    subtitle: "Plant Health AI",
-    description:
-      "IoT-based plant health classification system using bioelectric and environmental sensor telemetry with a CNN-LSTM model for temporal signal analysis.",
-    tags: ["Machine Learning", "CNN-LSTM", "IoT", "ESP32", "Signal Processing", "Sensor Integration"],
-    github: "https://github.com/R-J-N-1810/Green-Voice",
-    category: "AI",
-    highlight: "Top 10 — VIT-AP Engineering Clinics Expo",
-  },
-  {
+    slug: "rxocr",
+    featured: false,
     title: "RxOCR",
-    subtitle: "Multi-Domain Prescription OCR Prototype",
+    subtitle: "Prescription OCR Prototype",
     description:
-      "Healthcare OCR system for digitizing handwritten prescriptions using multi-pass EasyOCR, confidence-weighted text merging, fuzzy drug matching, and domain-specific information extraction.",
-    tags: ["OCR", "EasyOCR", "OpenCV", "Healthcare AI", "Information Extraction", "RapidFuzz", "Python"],
+      "Digitizes handwritten prescriptions. Multi-pass EasyOCR with confidence-weighted merging, fuzzy drug-name matching and domain-specific information extraction.",
+    tags: ["EasyOCR", "OpenCV", "RapidFuzz", "Python"],
     github: "https://github.com/sreesaivardhan/prescription-ocr-prototype",
     category: "AI",
     highlight: null,
   },
   {
+    slug: "gemini-pro-financial-decoder",
+    featured: false,
     title: "Gemini Pro Financial Decoder",
     subtitle: "GenAI Application",
     description:
-      "GenAI-powered financial analysis platform using Gemini 1.5 Flash, LangChain PromptTemplates, and Streamlit to interpret uploaded CSV and Excel financial statements.",
-    tags: ["Gemini API", "LangChain", "LLMs", "GenAI", "Streamlit", "Pandas", "Financial Analytics"],
+      "Explains financial statements with GenAI. Upload a CSV or Excel file and Gemini 1.5 Flash, LangChain prompt templates and Streamlit interpret it.",
+    tags: ["Gemini API", "LangChain", "Streamlit", "Pandas"],
     github: "https://github.com/sreesaivardhan/gemini-financial-decoder",
     category: "AI",
     highlight: null,
   },
   {
+    slug: "hybrid-ml-fraud-detection",
+    featured: false,
     title: "Hybrid ML Fraud Detection",
     subtitle: "Machine Learning",
     description:
-      "Ensemble fraud detection pipeline combining Logistic Regression, Random Forest, and XGBoost with structured preprocessing and feature engineering for imbalanced transaction classification.",
-    tags: ["XGBoost", "Random Forest", "Logistic Regression", "Scikit-learn", "Fraud Detection", "Feature Engineering"],
+      "Fraud detection on heavily imbalanced transaction data. Ensembles Logistic Regression, Random Forest and XGBoost with structured preprocessing and feature engineering.",
+    tags: ["XGBoost", "Random Forest", "Scikit-learn", "Feature Engineering"],
     github: "https://github.com/sreesaivardhan/ML-FRAUD-DETECTION-PROJECT",
     category: "AI",
     highlight: null,
   },
   {
+    slug: "lenslore",
+    featured: false,
     title: "LensLore",
-    subtitle: "Photography Journal Platform",
+    subtitle: "Photography Journal",
     description:
-      "Metadata-driven photography platform featuring JSON-powered content rendering, dynamic galleries, collection filtering, modal navigation, theme persistence, and responsive editorial storytelling.",
-    tags: [
-      "JavaScript", "HTML5", "CSS3", "JSON", "Responsive Design", "UI/UX", "Editorial Design", "Frontend"],
+      "A photography journal driven by JSON metadata. Dynamic galleries, collection filtering, modal navigation and theme persistence in plain JavaScript.",
+    tags: ["JavaScript", "HTML5", "CSS3", "JSON"],
     github: "https://github.com/sreesaivardhan/virtual-gallery",
     live: "https://virtual-gallery-gamma-woad.vercel.app",
     category: "Web",
     highlight: null,
-  }
-];
-
-export const certifications = [
-  {
-    title: "AWS Academy Graduate – Cloud Architecting",
-    issuer: "Amazon Web Services",
-    date: "October 2025",
-    badge: "aws",
-    verify: "https://www.credly.com/badges/8ae6a057-a32b-4844-9df4-53d15f2ad8f2/public_url",
-  },
-  {
-    title: "AWS Academy Graduate – Cloud Foundations",
-    issuer: "Amazon Web Services",
-    date: "September 2025",
-    badge: "aws",
-    verify: "https://www.credly.com/badges/f9498fa6-f2a3-4d3d-8a37-6287ea94d202/public_url",
-  },
-  {
-    title: "Develop GenAI Apps with Gemini and Streamlit",
-    issuer: "Google Cloud",
-    date: "2025",
-    badge: "google",
-    verify: "https://www.credly.com/badges/a2282c0b-a0af-405a-9572-5503aa3d0eeb/public_url",
-  },
-  {
-    title: "Inspect Rich Documents with Gemini Multimodality & RAG",
-    issuer: "Google Cloud",
-    date: "2025",
-    badge: "google",
-    verify: "https://www.credly.com/badges/5f9a8f1b-2e3f-43d5-96f5-90f03500675f/public_url",
-  },
-  {
-    title: "Prompt Design in Vertex AI",
-    issuer: "Google Cloud",
-    date: "2025",
-    badge: "google",
-    verify: "https://www.credly.com/badges/4cbdbf23-5f95-4b5e-b7ee-1651134eb1b9/public_url",
-  },
-  {
-    title: "Journey to Cloud: Envisioning Your Solution",
-    issuer: "IBM SkillsBuild",
-    date: "2025",
-    badge: "ibm",
-    verify: "https://www.credly.com/badges/54b30965-31bc-4b43-9ef7-fe65ac4c1057/public_url",
-  },
-  {
-    title: "Getting Started with Artificial Intelligence",
-    issuer: "IBM SkillsBuild",
-    date: "June 2025",
-    badge: "ibm",
-    verify: "https://www.credly.com/badges/dbc17ab4-a600-42a0-a1d3-0032a113f00a/public_url",
   },
 ];
 
-export const achievements = [
-  {
-    title: "Registered Design Contributor",
-    org: "Smart Power Bank — Indian Designs Act",
-    duration: "2025",
-    icon: "certificate",
-    points: [
-      "Co-contributor to a multi-function smart power bank registered under the Indian Designs Act.",
-      "Design Registration Number: 455127-001.",
-    ],
-  },
-  {
-    title: "Top 10 Project – Engineering Clinics Expo",
-    org: "VIT-AP University",
-    duration: "2025",
-    icon: "trophy",
-    points: [
-      "GreenVoice selected among Top 10 projects at the VIT-AP Engineering Clinics Expo.",
-    ],
-  },
-  {
-    title: "Vice President – Machine Learning Club",
-    org: "VIT-AP University (MLC)",
-    duration: "Dec 2023 – May 2026",
-    icon: "leadership",
-    points: [
-      "Won the Best Technical Club Award for 2025-2026 at VIT-AP University.",
-      "Spearheading operations managing 10+ groups across technical and non-technical departments.",
-      "Orchestrated 10+ annual ML workshops, competitions, and technical sessions.",
-    ],
-  },
-  {
-    title: "HackVerse 2025 – National Hackathon",
-    org: "Top 50 Finalist — 200+ competing teams",
-    duration: "April 2025",
-    icon: "medal",
-    points: [
-      "Built AI-powered skill exchange platform using MERN stack.",
-      "Ranked top 25% with full-stack implementation and real-time WebRTC features.",
-    ],
-  },
-]
+// -- Ordered exports (slug lookup keeps display order explicit) ---------------
+const bySlug = Object.fromEntries(projects.map((p) => [p.slug, p]));
+const pick = (slugs) => slugs.map((s) => bySlug[s]).filter(Boolean);
+
+// Featured: exactly 6, in display order
+export const featuredProjects = pick([
+  "nextask",
+  "semantic-search-engine",
+  "skillsync",
+  "retinal-disease-detection",
+  "medicore",
+  "greenvoice",
+]);
+
+// Archive: the remaining 8, in display order
+export const archiveProjects = pick([
+  "cognilearn",
+  "swarm",
+  "securegov",
+  "chatchime",
+  "rxocr",
+  "gemini-pro-financial-decoder",
+  "hybrid-ml-fraud-detection",
+  "lenslore",
+]);

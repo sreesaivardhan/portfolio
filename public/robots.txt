@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sreesaivardhan.dev/sitemap.xml
+Sitemap: https://www.sreesaivardhan.dev/sitemap.xml

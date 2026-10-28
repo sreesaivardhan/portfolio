@@ -1,0 +1,111 @@
+/* ─── Skip link ──────────────────────────────────── */
+.skip-link{
+  position:absolute;top:-100%;left:50%;transform:translateX(-50%);
+  padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;
+  background:var(--accent);color:#07090B;white-space:nowrap;z-index:9999;
+  transition:top .15s;
+}
+.skip-link:focus{top:8px}
+
+/* ─── Floating pill nav ──────────────────────────── */
+.nav-wrapper{
+  position:fixed;top:16px;left:50%;transform:translateX(-50%);
+  z-index:100;width:fit-content;max-width:720px;
+  display:flex;align-items:center;
+  padding:8px 10px 8px 18px;gap:24px;
+  border:1px solid var(--border);
+  border-radius:var(--radius-pill);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  background:rgba(13,17,22,0.6);
+}
+
+/* Mobile full-width pill */
+@media(max-width:779px){
+  .nav-wrapper{
+    width:calc(100% - 32px);max-width:none;
+    padding:8px 10px 8px 18px;
+    gap:0;justify-content:space-between;
+  }
+}
+
+/* Brand */
+.nav-brand{
+  font-family:var(--font-display);font-weight:800;font-size:26px;
+  line-height:1;letter-spacing:.01em;color:var(--text);
+  white-space:nowrap;flex-shrink:0;cursor:pointer;
+}
+.nav-brand span{color:var(--accent)}
+
+/* Desktop links */
+.nav-links{display:flex;gap:4px;position:relative;align-items:center}
+
+.nav-link{
+  position:relative;z-index:1;padding:8px 14px;
+  font:500 14px var(--font-body);color:var(--muted);
+  border-radius:10px;transition:color .2s;white-space:nowrap;
+  background:none;border:none;cursor:pointer;
+}
+.nav-link:hover{color:var(--text)}
+.nav-link.is-active{color:var(--text)}
+
+/* sliding highlight */
+.nav-highlight{
+  position:absolute;top:0;left:0;height:100%;border-radius:10px;
+  background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.35);
+  transition:transform .3s cubic-bezier(.4,0,.2,1),width .3s cubic-bezier(.4,0,.2,1),opacity .2s;
+  pointer-events:none;
+}
+
+/* Mobile menu button */
+.nav-menu-btn{
+  display:none;
+  align-items:center;justify-content:center;
+  min-height:44px;padding:0 14px;
+  font:500 14px var(--font-body);color:var(--muted);
+  background:none;border:none;cursor:pointer;
+  border-radius:10px;transition:color .2s;white-space:nowrap;
+}
+.nav-menu-btn:hover{color:var(--text)}
+
+@media(max-width:779px){
+  .nav-links{display:none}
+  .nav-menu-btn{display:flex}
+}
+
+/* ─── Mobile dropdown ────────────────────────────── */
+.nav-dropdown{
+  position:fixed;
+  /* top is set via JS (pill bottom + 8px gap) */
+  left:16px;right:16px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  background:rgba(13,17,22,0.92);
+  z-index:99;
+  overflow:hidden;
+  /* open/close animation */
+  opacity:0;transform:translateY(-8px);
+  transition:opacity .18s ease,transform .18s ease;
+  pointer-events:none;
+}
+.nav-dropdown.is-open{
+  opacity:1;transform:translateY(0);
+  pointer-events:auto;
+}
+.nav-dropdown-link{
+  display:flex;align-items:center;
+  width:100%;height:52px;padding:0 20px;
+  font:500 16px var(--font-body);color:var(--muted);
+  background:none;border:none;cursor:pointer;
+  border-bottom:1px solid var(--border);
+  text-align:left;transition:color .15s,background .15s;
+}
+.nav-dropdown-link:last-child{border-bottom:none}
+.nav-dropdown-link:hover,.nav-dropdown-link.is-active{color:var(--text);background:rgba(34,211,238,0.06)}
+
+@media(prefers-reduced-motion:reduce){
+  .nav-dropdown{transition:none}
+  .nav-highlight{transition:none}
+}
