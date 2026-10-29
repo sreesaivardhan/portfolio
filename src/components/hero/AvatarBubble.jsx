@@ -4,21 +4,12 @@ import { siteConfig } from '../../data/siteConfig';
 export default function AvatarBubble() {
   const [open, setOpen] = useState(false);
   const [glitch, setGlitch] = useState(false);
-  const [pos, setPos] = useState({ top: 0, left: 0 });
   const wrapRef = useRef(null);
   const lastType = useRef('mouse');
 
   const show = () => {
     setOpen(true);
     setGlitch(true);
-    if (wrapRef.current) {
-      const r = wrapRef.current.getBoundingClientRect();
-      // Anchor to the avatar's left edge so the bubble sits directly above the image
-      const bubbleW = Math.min(260, window.innerWidth - 32);
-      const rawLeft = r.left;
-      const clampedLeft = Math.min(rawLeft, window.innerWidth - bubbleW - 16);
-      setPos({ top: r.top - 8, left: Math.max(16, clampedLeft) });
-    }
     setTimeout(() => setGlitch(false), 650);
   };
   const hide = () => setOpen(false);
@@ -38,17 +29,11 @@ export default function AvatarBubble() {
     if (!window.matchMedia('(hover: none)').matches) return;
     const t = setTimeout(show, 1400);
     return () => clearTimeout(t);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []);
 
   const bubbleStyle = {
-    position: 'fixed',
-    top: pos.top + 'px',
-    left: pos.left + 'px',
     opacity: open ? 1 : 0,
     pointerEvents: open ? 'auto' : 'none',
-    transform: open
-      ? 'translateY(-100%) translateY(-16px)'
-      : 'translateY(-100%) translateY(-6px) scale(.85) rotate(-4deg)',
   };
 
   return (
@@ -79,6 +64,8 @@ export default function AvatarBubble() {
           alt="Sai Vardhan"
           width="168"
           height="168"
+          fetchPriority="high"
+          decoding="async"
           onError={(e) => { e.currentTarget.src = '/images/sai-placeholder.svg'; }}
         />
       </button>
@@ -90,7 +77,7 @@ export default function AvatarBubble() {
         aria-hidden={!open}
         style={bubbleStyle}
       >
-        <span className="glitch" data-text="hey, i am sai vardhan">
+        <span className="glitch" data-text="hey, i am vardhan">
           hey, i am vardhan
         </span>
       </div>

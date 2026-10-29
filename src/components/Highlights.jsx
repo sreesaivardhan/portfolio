@@ -74,7 +74,7 @@ export default function Highlights() {
     <div className="container">
       <Reveal>
         <h2 className="section-title">
-          The <em>highlight</em> reel
+          The <em>highlights</em>
         </h2>
       </Reveal>
 

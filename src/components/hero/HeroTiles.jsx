@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './HeroTiles.css';
 
 /* Target tile size per breakpoint */
@@ -24,29 +24,32 @@ function computeGrid(w, h) {
   let cols = Math.ceil(w / size);
   let rows = Math.ceil(h / size);
 
-  // If over cap, scale up the tile size until we're within cap
-  while (cols * rows > cap) {
-    size += 2;
-    cols = Math.ceil(w / size);
-    rows = Math.ceil(h / size);
+  if (w >= 1024) {
+    while (cols * rows > cap) {
+      size += 2;
+      cols = Math.ceil(w / size);
+      rows = Math.ceil(h / size);
+    }
   }
 
   return { cols, rows };
 }
 
 export default function HeroTiles() {
-  const heroRef = useRef(null);
   const [grid, setGrid] = useState({ cols: 1, rows: 1 });
 
   useEffect(() => {
-    // Find the .hero ancestor
     const hero = document.querySelector('.hero');
     if (!hero) return;
-    heroRef.current = hero;
 
     const measure = () => {
       const { width, height } = hero.getBoundingClientRect();
-      setGrid(computeGrid(width, height));
+      const nextGrid = computeGrid(width, height);
+      setGrid((currentGrid) =>
+        currentGrid.cols === nextGrid.cols && currentGrid.rows === nextGrid.rows
+          ? currentGrid
+          : nextGrid
+      );
     };
 
     measure();

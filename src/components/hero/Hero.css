@@ -125,8 +125,11 @@
 
 /* ─── Bubble ────────────────────────────────────────────── */
 .bubble {
-  /* position, top, left, opacity, transform, pointer-events
-     are all set via inline style in AvatarBubble.jsx */
+  --bubble-gap: 40px;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--bubble-gap));
+  transform: translateY(-50%) translateX(-6px) scale(.85) rotate(-4deg);
   background: #F4F7FA;
   color: #07090B;
   border: 2px solid #07090B;
@@ -134,30 +137,38 @@
   box-shadow: 4px 4px 0 var(--accent);
   padding: 10px 16px;
   white-space: normal;
-  max-width: min(260px, calc(100vw - 2 * var(--gutter) - 16px));
+  width: max-content;
+  max-width: min(260px, calc(100vw - var(--avatar-size) - var(--gutter) - var(--gutter) - var(--bubble-gap)));
   transition: opacity .28s cubic-bezier(.34, 1.56, .64, 1),
     transform .28s cubic-bezier(.34, 1.56, .64, 1);
   z-index: 200;
 }
 
-/* comic-book tail: rotated square at bottom-left of bubble */
+/* comic-book tail points from the bubble toward the avatar */
 .bubble::before {
   content: '';
   position: absolute;
-  bottom: -8px;
-  left: 14px;
+  top: 50%;
+  left: -8px;
   width: 12px;
   height: 12px;
   background: #F4F7FA;
-  border-right: 2px solid #07090B;
+  border-left: 2px solid #07090B;
   border-bottom: 2px solid #07090B;
-  transform: rotate(45deg);
-  box-shadow: 2px 2px 0 var(--accent);
+  transform: translateY(-50%) rotate(45deg);
+  box-shadow: -2px 2px 0 var(--accent);
 }
 
 /* bubble open state: handled via inline style in AvatarBubble.jsx */
 .avatar-wrap.is-open .bubble {
   pointer-events: auto;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1023px) {
+  .bubble {
+    --bubble-gap: 12px;
+  }
 }
 
 /* ─── Glitch text ───────────────────────────────────────── */
@@ -320,6 +331,15 @@
 @media (max-width: 779px) {
   .icon-link::after {
     display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .icon-link {
+    background: var(--surface);
+    border-color: rgba(244, 247, 250, 0.16);
+    color: var(--text);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
   }
 }
 

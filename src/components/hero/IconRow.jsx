@@ -7,7 +7,7 @@ const ICONS = [
   { key: 'linkedin',  label: 'linkedin',  Icon: FaLinkedinIn, href: siteConfig.linkedin  },
   { key: 'twitter',   label: 'twitter',   Icon: FaXTwitter,   href: siteConfig.twitter   },
   { key: 'instagram', label: 'instagram', Icon: FaInstagram,  href: siteConfig.instagram }, // photography page
-  { key: 'resume',    label: 'resume',    Icon: FiFileText,   href: siteConfig.resume    }, // TODO: add resume.pdf to /public
+  { key: 'resume',    label: 'resume',    Icon: FiFileText,   href: siteConfig.resume    },
 ];
 
 export default function IconRow() {

@@ -6,7 +6,7 @@ export const highlights = [
     subtitle: 'Smart Power Bank · Indian Designs Act',
     body: 'Co-designer of a multi-function smart power bank registered under the Indian Designs Act. Registration no. 455127-001.',
     icon: 'LuBadgeCheck',
-    link: { label: 'certificate', href: '/public/Design_patent.pdf' },
+    link: { label: 'certificate', href: 'https://drive.google.com/file/d/1VYRz1u8FS8pW6k6w4Z3L8Zvpk40yc_N1/view?usp=sharing' },
   },
   {
     id: 'greenvoice',

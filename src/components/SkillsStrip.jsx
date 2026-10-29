@@ -29,7 +29,7 @@ export default function SkillsStrip() {
   return (
     <section className="skills" aria-label="skills and tools">
       <Reveal>
-        <span className="label">skills &amp; tools</span>
+        <span className="label">Tech Stack &amp; Tools</span>
       </Reveal>
 
       <Reveal delay={80}>

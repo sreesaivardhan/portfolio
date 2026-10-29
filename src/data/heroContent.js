@@ -5,6 +5,6 @@ export const editorLines = [
   { type: 'blank' },
   { type: 'text', text: 'Outside of code I take photos (the instagram icon is my photography page) and consume an unhealthy amount of movies.' },
   { type: 'blank' },
-  { type: 'status', label: 'status', text: 'Open to Internships' },
-  { type: 'status', label: 'location', text: 'Hyderabad, Telangana, India' },
+  { type: 'status', label: 'status:', text: 'Open to Internships.' },
+  { type: 'status', label: 'location:', text: 'Hyderabad, Telangana, India.' },
 ];
